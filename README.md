@@ -3,7 +3,7 @@ The goal of this project is to visualise some cool mathematical phenomenon
 
 | Projects      | demo           | Explenation  |
 | ------------- |:-------------:| -----:|
-| Fibonacci modulus     | [Demo](rutgerklamer.nl/maths/fibonacci_numbers) |[Youtube](https://www.youtube.com/watch?v=o1eLKODSCqw) |
+| Fibonacci modulus     | [Demo](https://rutgerklamer.nl/maths/fibonacci_numbers) |[Youtube](https://www.youtube.com/watch?v=o1eLKODSCqw) |
 
 The MIT License (MIT)
 =====================
