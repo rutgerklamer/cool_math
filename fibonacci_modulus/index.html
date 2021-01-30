@@ -1,0 +1,42 @@
+<!doctype html>
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" >
+        <title>fibonacci modulus</title>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/big.js@6.0.0/big.min.js'></script>
+        <script src="main.js"></script>
+        <style>
+          body {
+            background-color: #FEFF0C;
+          }
+        </style>
+        </head>
+        <body>
+
+          <div style="width: 20%">
+            Divider:<br> <input type="text" id="divider" value="25"><br> <br>
+            Fibonacci multiplier (0 no multiplier): <input type="text" id="multiplier" value="0"> <br> <br>
+            Fibonacci start (seperate by ":"): <input type="text" id="fibstart" value="0:1">
+            <button onclick="setup()">Try it</button> <br> <br>
+            <button onclick="changeStroke(0.1)">Linewidth 0.1</button> <br>
+            <button onclick="changeStroke(0.3)">Linewidth 0.3</button> <br>
+            <button onclick="changeStroke(1)">Linewidth 1</button> <br>
+            <button onclick="changeStroke(2)">Linewidth 2</button> <br> <br>
+            When we are going through every number of a fibonacci sequence and use a modulus(X) on that number, we always get a repeating sequence of remainders.
+            We can plot those remainders on a circle where we have X-1 points. We draw lines between the current remainder and the previous remainder. This gets
+            us some interesting results where some outcomes are perfectly symmetrical.
+          </div> <br>
+          Some cool examples: <br>
+          <button onclick="wow()">Woow</button> <br>
+          <button onclick="butt()">Butt/mushroom</button> <br>
+          <button onclick="eye()">Eye</button> <br>
+          <button onclick="infinite()">Infinite</button> <br>
+          <button onclick="straight()">Straight line symmetry</button> <br>
+          <button onclick="mandala()">Mandala</button> <br>
+          <button onclick="randomShape()">Random</button> <br>
+
+        </body>
+</html>
