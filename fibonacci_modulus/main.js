@@ -4,7 +4,7 @@ let radius = width/2;
 let centerX = width/2;
 let centerY = height/2;
 let lineWeight = 1;
-let curAngle, prevAngle, prevPrevAngle, haveRepeated, divider, fib, sequence, lastSec,multiplyFib, enable;
+let curAngle, prevAngle, prevPrevAngle, haveRepeated, divider, fib, sequence, multiplyFib;
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 0, 'absolute');
@@ -85,7 +85,7 @@ function draw() {
       stroke(0,255,0);
       noFill();
       ellipse(width/2, height/2, radius*2, radius*2);
-
+      curAngle = prevAngle = prevPrevAngle = 0;
       haveRepeated = true;
       return;
     }
@@ -100,7 +100,7 @@ function draw() {
   curAngle = 360 / divider * num - 90;
 
 
-  
+
   let curX = centerX + radius * cos(curAngle * (Math.PI/180))
   let curY = centerY + radius * sin(curAngle * (Math.PI/180))
 
