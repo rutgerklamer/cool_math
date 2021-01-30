@@ -4,6 +4,8 @@ The goal of this project is to visualise some cool mathematical phenomenon
 | Projects      | demo           | Explenation  |
 | ------------- |:-------------:| -----:|
 | Fibonacci modulus     | [Demo](https://rutgerklamer.nl/maths/fibonacci_modulus) |[Youtube](https://www.youtube.com/watch?v=o1eLKODSCqw) |
+| Golden ratio     | [Demo](https://rutgerklamer.nl/maths/golden_ratio) |[Youtube](https://www.youtube.com/watch?v=sj8Sg8qnjOg) |
+
 
 The MIT License (MIT)
 =====================
