@@ -4,6 +4,7 @@ let radius = width/2;
 let centerX = width/2;
 let centerY = height/2;
 let lineWeight = 1;
+
 let curAngle, prevAngle, prevPrevAngle, haveRepeated, divider, fib, sequence, multiplyFib;
 
 function setup() {
@@ -27,9 +28,32 @@ function start() {
 }
 
 function butt() {
+  /* old
   document.getElementById("divider").value = 2529
   document.getElementById("multiplier").value = 2;
-  document.getElementById("fibstart").value = "0:1";
+  document.getElementById("fibstart").value = "0:1"; */
+  document.getElementById("divider").value = 737
+  document.getElementById("multiplier").value = 2;
+  document.getElementById("fibstart").value = "9:3";
+
+  setup();
+}
+function shrek() {
+  document.getElementById("divider").value = 972
+  document.getElementById("multiplier").value = 682;
+  document.getElementById("fibstart").value = "5:2";
+  setup();
+}
+function jg() {
+  document.getElementById("divider").value = 972
+  document.getElementById("multiplier").value = 164;
+  document.getElementById("fibstart").value = "5:2";
+  setup();
+}
+function grid() {
+  document.getElementById("divider").value = 972
+  document.getElementById("multiplier").value = 168;
+  document.getElementById("fibstart").value = "5:2";
   setup();
 }
 
