@@ -6,7 +6,7 @@ The goal of this project is to visualise some cool mathematical phenomenon
 | Fibonacci modulus     | [Demo](https://rutgerklamer.nl/maths/fibonacci_modulus) |[Youtube](https://www.youtube.com/watch?v=o1eLKODSCqw) |
 | Golden ratio     | [Demo](https://rutgerklamer.nl/maths/golden_ratio) |[Youtube](https://www.youtube.com/watch?v=sj8Sg8qnjOg) |
 | Beautiful trigonometry     | [Demo](https://rutgerklamer.nl/maths/beautiful_trigonometry) |[Youtube](https://www.youtube.com/watch?v=snHKEpCv0Hk) |
-
+| Cellular automata     | [Demo](https://rutgerklamer.nl/maths/cellular_automata) |[Youtube](https://www.youtube.com/watch?v=R9Plq-D1gEk) |
 
 The MIT License (MIT)
 =====================
