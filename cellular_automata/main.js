@@ -44,7 +44,7 @@ function init() {
   for (let i = 0; i < co; i++) {
     for (let j = 0; j < rows; j++) {
       if (i == 0 || j == 0 || i == co-1 || j == rows-1) board[i][j] = 0;
-      else board[i][j] = floor(random(3));
+      else board[i][j] = floor(random(2));
       next[i][j] = 0;
     }
   }
