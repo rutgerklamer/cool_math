@@ -1,14 +1,15 @@
 let width = 700;
 let height = 700;
-let radius = width/2;
+let radius = width/2-10;
 let centerX = width/2;
 let centerY = height/2;
 let lineWeight = 1;
 
+
 let curAngle, prevAngle, prevPrevAngle, haveRepeated, divider, fib, sequence, multiplyFib;
 
 function setup() {
-  createCanvas(width, height).position(screen.width/4, 0, 'absolute');
+  createCanvas(width, height).position(screen.width/4, 25, 'absolute');
   background(254,255,12)
   strokeWeight(5)
   stroke(0,0,0);
@@ -85,6 +86,14 @@ function randomShape() {
   setup();
 }
 
+function perfectCircle() {
+  document.getElementById("divider").value = 1244160;
+  document.getElementById("multiplier").value = 666;
+  document.getElementById("fibstart").value = "2:6";
+  setup();
+}
+
+
 function eye() {
   document.getElementById("divider").value = 680;
   document.getElementById("multiplier").value = 670;
@@ -111,8 +120,10 @@ function draw() {
       ellipse(width/2, height/2, radius*2, radius*2);
       curAngle = prevAngle = prevPrevAngle = 0;
       haveRepeated = true;
+      document.getElementById("num").text = fib[fib.length-1].c.join("");
       return;
     }
+    for (i = 0; i < 10; i++) {
     if (multiplyFib > 0) {
       fib.push(Big(fib[fib.length-1].add(fib[fib.length-2].times(multiplyFib))))
   } else {
@@ -139,6 +150,7 @@ function draw() {
   line(prevPrevX, prevPrevY, prevX, prevY);
   stroke(255,255,255)
   line(prevX, prevY, curX, curY);
+}
 }
 
 function checkRepeated(str) {

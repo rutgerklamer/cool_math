@@ -1,6 +1,6 @@
 let width = 700;
 let height = 700;
-let radius = width/2;
+let radius = width/2-1;
 let centerX = width/2;
 let centerY = height/2;
 let lineWeight = 1;
