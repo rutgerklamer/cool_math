@@ -1,0 +1,35 @@
+<!doctype html>
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" >
+        <title>Pendulum</title>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/big.js@6.0.0/big.min.js'></script>
+        <script src="main.js"></script>
+        <style>
+          body {
+            background-color: #FEFF0C;
+          }
+        </style>
+        </head>
+        <body>
+
+
+          <div style="width: 20%">
+
+            Pretty self explenitory double pendulum. <br> <br>
+            <input type="range" min="1" max="100" value="50" class="slider" id="pen1"> Length of pendulum 1<br>
+            <input type="range" min="1" max="100" value="50" class="slider" id="pen2"> Length of pendulum 2<br>
+            <input type="range" min="1" max="100" value="50" class="slider" id="we1"> Weight of pendulum 1<br>
+            <input type="range" min="1" max="100" value="50" class="slider" id="we2"> Weight of pendulum 2<br>
+            <button onclick="changeGravity(0.1)">Gravity 0.1</button> <br>
+            <button onclick="changeGravity(0.5)">Linewidth 0.5</button> <br>
+            <button onclick="changeGravity(1)">Linewidth 1</button> <br>
+            <button onclick="changeGravity(1.5)">Linewidth 1.5</button> <br> <br>
+            <button onclick="resetPendulum()">Reset pendulum</button> <br>
+          <a href="../index.html">Go home</a>
+          </div> <br>
+        </body>
+</html>
