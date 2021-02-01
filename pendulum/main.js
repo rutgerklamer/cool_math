@@ -48,6 +48,7 @@ function draw() {
   pendulum2Length = height*document.getElementById("pen2").value/250;
   let weight1 = document.getElementById("we1").value/5;
   let weight2 = document.getElementById("we2").value/5;
+  
   clear()
   imageMode(CORNER);
   image(buffer, 0, 0, width, height);
