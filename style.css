@@ -85,3 +85,18 @@ input[type=range] {
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
+
+.sliderWrapper {
+  width: 97%;
+  overflow:hidden;
+  white-space: pre-wrap;
+
+}
+
+.sliderText {
+  white-space: pre-line;
+  font-size: 1.1vw;
+  margin-top: -7px;
+  margin-left: 10px;
+    position:absolute;
+}
