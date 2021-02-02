@@ -1,5 +1,5 @@
 # Cryptocurrency tracker
-The goal of this project is to visualise some cool mathematical phenomenon
+The goal of this project is to visualise some cool mathematical phenomenon. Although this project is cool as fuck do not mind the (sometimes) bad code and spelling mistakes.
 
 | Projects      | demo           | Explenation  |
 | ------------- |:-------------:| -----:|
