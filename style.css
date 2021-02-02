@@ -1,7 +1,7 @@
 :root {
   --bgColor: white;
   --textColor: black;
-  --textHoverColor: grey;
+  --textHoverColor: #ED2939;
   --yellow: #FFFF01;
 }
 
@@ -24,6 +24,10 @@ a:link, a:visited, a, p {
 }
 
 a:hover {
+  color: var(--textHoverColor);
+}
+
+h3 {
   color: var(--textHoverColor);
 }
 
