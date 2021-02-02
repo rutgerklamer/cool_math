@@ -51,32 +51,34 @@ function init() {
 }
 
 function conway() {
-  for (let x = 1; x < co - 1; x++) {
-    for (let y = 1; y < rows - 1; y++) {
-      let neighbors = 0;
-      for (let i = -1; i <= 1; i++) {
-        for (let j = -1; j <= 1; j++) {
-          neighbors += board[x+i][y+j];
+  for (i = 0; i < document.getElementById("speed").value/10; i++) {
+    for (let x = 1; x < co - 1; x++) {
+      for (let y = 1; y < rows - 1; y++) {
+        let neighbors = 0;
+        for (let i = -1; i <= 1; i++) {
+          for (let j = -1; j <= 1; j++) {
+            neighbors += board[x+i][y+j];
+          }
+        }
+
+        neighbors -= board[x][y];
+        if ((board[x][y] == 1) && (neighbors <  2)) {
+          next[x][y] = 0;
+        }
+        else if ((board[x][y] == 1) && (neighbors >  3)) {
+          next[x][y] = 0;
+        }
+        else if ((board[x][y] == 0) && (neighbors == 3)) {
+          next[x][y] = 1;
+        }
+        else {
+          next[x][y] = board[x][y];
         }
       }
-
-      neighbors -= board[x][y];
-      if ((board[x][y] == 1) && (neighbors <  2)) {
-        next[x][y] = 0;
-      }
-      else if ((board[x][y] == 1) && (neighbors >  3)) {
-        next[x][y] = 0;
-      }
-      else if ((board[x][y] == 0) && (neighbors == 3)) {
-        next[x][y] = 1;
-      }
-      else {
-        next[x][y] = board[x][y];
-      }
     }
-  }
 
-  let temp = board;
-  board = next;
-  next = temp;
+    let temp = board;
+    board = next;
+    next = temp;
+  }
 }
