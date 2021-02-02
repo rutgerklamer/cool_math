@@ -23,12 +23,12 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
   conway();
   for ( let i = 0; i < co;i++) {
     for ( let j = 0; j < rows;j++) {
       if ((board[i][j] == 1)) fill(0);
-      else   fill(254,255,12);
+      else   fill(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
       stroke(0);
       rect(i * w, j * w, w-1, w-1);
     }

@@ -11,7 +11,7 @@ let times = 0;
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 0, 'absolute');
-  background(254,255,12)
+  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
   strokeWeight(2)
   stroke(0,0,0);
   fill(254,255,12);

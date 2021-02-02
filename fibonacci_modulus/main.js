@@ -10,10 +10,10 @@ let curAngle, prevAngle, prevPrevAngle, haveRepeated, divider, fib, sequence, mu
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 25, 'absolute');
-  background(254,255,12)
+  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
   strokeWeight(5)
   stroke(0,0,0);
-  fill(254,255,12);
+  fill(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
   ellipse(width/2, height/2, radius*2, radius*2);
   start();
 }
@@ -120,7 +120,6 @@ function draw() {
       ellipse(width/2, height/2, radius*2, radius*2);
       curAngle = prevAngle = prevPrevAngle = 0;
       haveRepeated = true;
-      document.getElementById("num").text = fib[fib.length-1].c.join("");
       return;
     }
     for (i = 0; i < 10; i++) {

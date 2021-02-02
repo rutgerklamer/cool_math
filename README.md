@@ -8,6 +8,7 @@ The goal of this project is to visualise some cool mathematical phenomenon
 | Beautiful trigonometry     | [Demo](https://rutgerklamer.nl/maths/beautiful_trigonometry) |[Youtube](https://www.youtube.com/watch?v=snHKEpCv0Hk) |
 | Cellular automata     | [Demo](https://rutgerklamer.nl/maths/cellular_automata) |[Youtube](https://www.youtube.com/watch?v=R9Plq-D1gEk) |
 | Pendulum     | [Demo](https://rutgerklamer.nl/maths/pendulum) |[Youtube](https://www.youtube.com/watch?v=uWzPe_S-RVE) |
+| Toothpicks     | [Demo](https://rutgerklamer.nl/maths/toothpicks) |[Youtube](https://www.youtube.com/watch?v=_UtCli1SgjI&t=90s) |
 
 The MIT License (MIT)
 =====================

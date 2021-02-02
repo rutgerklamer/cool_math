@@ -1,0 +1,27 @@
+:root {
+  --bgColor: white;
+  --textColor: black;
+  --textHoverColor: grey;
+}
+
+body {
+  background-color: var(--bgColor);
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+a:link, a:visited, a, p {
+  color: var(--textColor);
+  line-height: 48px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+a:hover {
+  color: var(--textHoverColor);
+}

@@ -33,7 +33,7 @@ function changeGravity(g) {
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 25, 'absolute');
-  background(254,255,12)
+  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
   pixelDensity(1);
   a1 = Math.PI / 2;
   a2 = Math.PI / 2;
@@ -48,7 +48,7 @@ function draw() {
   pendulum2Length = height*document.getElementById("pen2").value/250;
   let weight1 = document.getElementById("we1").value/5;
   let weight2 = document.getElementById("we2").value/5;
-  
+
   clear()
   imageMode(CORNER);
   image(buffer, 0, 0, width, height);
@@ -78,11 +78,11 @@ function draw() {
   let y2 = y1 + pendulum2Length * cos(a2);
 
   line(0, 0, x1, y1);
-  fill(0);
+  fill(254,255,12);
   ellipse(x1, y1, weight1, weight1);
 
   line(x1, y1, x2, y2);
-  fill(0);
+  fill(254,255,12);
   ellipse(x2, y2, weight2, weight2);
 
   a1_v += a1_a;
