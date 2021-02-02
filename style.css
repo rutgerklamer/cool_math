@@ -2,6 +2,7 @@
   --bgColor: white;
   --textColor: black;
   --textHoverColor: grey;
+  --yellow: #FFFF01;
 }
 
 body {
@@ -24,4 +25,59 @@ a:link, a:visited, a, p {
 
 a:hover {
   color: var(--textHoverColor);
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.right {
+  float:right;
+    display:inline;
+}
+
+.info {
+  display: block;
+  position:absolute;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 50vw;
+  font-size: 24px;
+}
+
+button {
+  width: 100%;
+  background-color: var(--yellow);
+  padding: 14px 20px;
+  margin: 4px 0;
+  border: 4px var(--textColor) solid;
+  cursor: pointer;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: var(--yellow);
+  color: white;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 97%;
+  height: 25px;
+  border: 4px var(--textColor) solid;
+  background-color: var(--yellow);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
 }

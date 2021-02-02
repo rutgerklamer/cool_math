@@ -12,7 +12,6 @@ function setup() {
   createCanvas(width, height).position(screen.width/4, 25, 'absolute');
   background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
   setStart();
-
 }
 
 function blockInfinite() {
@@ -51,10 +50,8 @@ function draw() {
   for (i = 0; i < document.getElementById("speed").value; i++) {
     ellipse(start[0],start[1], document.getElementById("size").value,document.getElementById("size").value);
     let randomMove = Math.floor(random(points.length));
-    console.log(randomMove)
     let angle = Math.atan2(points[randomMove][1] - start[1],points[randomMove][0] - start[0]);
     var distanceToMove = Math.sqrt((start[0]-points[randomMove][0])*(start[0]-points[randomMove][0]) + (start[1]-points[randomMove][1])*(start[1]-points[randomMove][1]))/division;
-    console.log(distanceToMove);
 
     let curX = start[0] + distanceToMove * cos(angle )
     let curY = start[1] + distanceToMove * sin(angle )

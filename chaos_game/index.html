@@ -14,9 +14,7 @@
         <body>
 
           <div style="width: 20%">
-            We spawn a set of big points and a dot randomly placed on the screen. Every time we randomly choos a point to move towards.
-            The distance moved is the distance from the current point to said point divided by a set amount. We leave a trail for some interesting fractals.
-            <br><br>
+
             <input type="range" min="1" max="50" value="20" class="slider" id="speed">Speed<br>
             <input type="range" min="1" max="25" value="2" class="slider" id="size">Size<br>
             <button onclick="sierpinskiTriangle()">sierpinski triangle</button> <br>
@@ -24,6 +22,12 @@
             <button onclick="sierpinskiBlock()">sierpinski square</button> <br>
             <button onclick="block()">square</button> <br>
           <a href="../index.html">Go home</a>
-          </div> <br>
+          </div> 
+          <div class="info">
+            We spawn a set of big points and a dot randomly placed on the screen.
+            Every time we randomly choos a point to move towards.
+            The distance moved is the distance from the current point to said point divided by a set amount.
+            We leave a trail for some interesting fractals.
+            </div>
         </body>
 </html>
