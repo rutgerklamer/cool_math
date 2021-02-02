@@ -64,6 +64,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: var(--textHoverColor);
+}
+
 input[type=submit] {
   width: 100%;
   background-color: var(--yellow);
