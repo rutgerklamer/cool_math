@@ -11,7 +11,7 @@ function setup() {
   background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
   strokeWeight(1)
   stroke(0,0,0);
-  fill(254,255,12);
+  fill(getComputedStyle(document.documentElement).getPropertyValue('--standout'));
   animate = false;
   displaySeeds();
   ratio = 1.61803398875;

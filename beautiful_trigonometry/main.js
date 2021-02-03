@@ -14,7 +14,7 @@ function setup() {
   background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
   strokeWeight(2)
   stroke(0,0,0);
-  fill(254,255,12);
+  fill(getComputedStyle(document.documentElement).getPropertyValue('--standout'));
   ellipse(width/2, height/2, radius*2, radius*2);
 
 }

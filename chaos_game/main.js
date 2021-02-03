@@ -54,7 +54,7 @@ function getDistance(a,b) {
 function setStart() {
   clear();
   start = [points[0][0], points[0][1]];
-  fill(254,255,12);
+  fill(getComputedStyle(document.documentElement).getPropertyValue('--standout'));
   let closest = 0;
   let dist = height;
   for (i = 0; i < points.length; i++) {

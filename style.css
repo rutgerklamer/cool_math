@@ -3,6 +3,7 @@
   --textColor: black;
   --textHoverColor: #ED2939;
   --yellow: #C9AC9B;
+  --standout: #ED2939;
 }
 
 body {  font-family: "Times New Roman", Times, serif;

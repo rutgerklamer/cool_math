@@ -78,11 +78,11 @@ function draw() {
   let y2 = y1 + pendulum2Length * cos(a2);
 
   line(0, 0, x1, y1);
-  fill(254,255,12);
+  fill(getComputedStyle(document.documentElement).getPropertyValue('--standout'));
   ellipse(x1, y1, weight1, weight1);
 
   line(x1, y1, x2, y2);
-  fill(254,255,12);
+  fill(getComputedStyle(document.documentElement).getPropertyValue('--standout'));
   ellipse(x2, y2, weight2, weight2);
 
   a1_v += a1_a;
@@ -91,7 +91,7 @@ function draw() {
   a2 += a2_v;
 
 
-  buffer.stroke(0);
+  buffer.stroke(getComputedStyle(document.documentElement).getPropertyValue('--standout'));
   if (frameCount > 1) {
     buffer.line(px2, py2, x2, y2);
   }
