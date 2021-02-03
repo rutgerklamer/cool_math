@@ -13,6 +13,7 @@ let attackTime = 0.01;
 let decayTime = 0.1;
 let susPercent = 0.5;
 let releaseTime = 0.1;
+let steps = 0;
 
 
 let curAngle, prevAngle, prevPrevAngle, haveRepeated, divider, fib, sequence, multiplyFib;
@@ -24,7 +25,7 @@ function setup() {
   stroke(0,0,0);
   fill(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
   ellipse(width/2, height/2, radius*2, radius*2);
-  osc = new p5.Oscillator('sine');
+  osc = new p5.Oscillator('triangle');
   osc.stop();
   env = new p5.Env();
   env.setADSR(attackTime, decayTime, susPercent, releaseTime);
@@ -149,38 +150,43 @@ function draw() {
       haveRepeated = true;
       return;
     }
-    for (i = 0; i < 10; i++) {
-    if (multiplyFib > 0) {
-      fib.push(Big(fib[fib.length-1].add(fib[fib.length-2].times(multiplyFib))))
-  } else {
-    fib.push(Big(fib[fib.length-1].add(fib[fib.length-2])));
-  }
-  let num = fib[fib.length-1].mod(divider).toNumber()
-  sequence += num;
-  if (playing) {
-      freq = pow(2, (floor(map(num, 0, divider, 0, 126)) - 49) / 12) * 220
-      osc.freq(freq);
-      env.play();
+    steps++;
+    if (steps > 10-document.getElementById("speed").value) {
+      for (i = 0; i < document.getElementById("speed").value; i++) {
+        steps = 0;
+        if (multiplyFib > 0) {
+          fib.push(Big(fib[fib.length-1].add(fib[fib.length-2].times(multiplyFib))))
+      } else {
+        fib.push(Big(fib[fib.length-1].add(fib[fib.length-2])));
+      }
+      let num = fib[fib.length-1].mod(divider).toNumber()
+      sequence += num;
+      if (playing) {
+          freq = pow(2, (floor(map(num, 0, divider, 0, 126)) - 49) / 12) * 220
+          osc.freq(freq);
+          env.play();
+        }
+      curAngle = 360 / divider * num - 90;
+
+
+
+      let curX = centerX + radius * cos(curAngle * (Math.PI/180))
+      let curY = centerY + radius * sin(curAngle * (Math.PI/180))
+
+      let prevX = centerX + radius * cos(prevAngle * (Math.PI/180))
+      let prevY = centerY + radius * sin(prevAngle * (Math.PI/180))
+
+      let prevPrevX = centerX + radius * cos(prevPrevAngle * (Math.PI/180))
+      let prevPrevY = centerY + radius * sin(prevPrevAngle * (Math.PI/180))
+      prevPrevAngle = prevAngle;
+      prevAngle = curAngle;
+      stroke(0,0,0)
+      line(prevPrevX, prevPrevY, prevX, prevY);
+      stroke(255,255,255)
+      line(prevX, prevY, curX, curY);
     }
-  curAngle = 360 / divider * num - 90;
+  }
 
-
-
-  let curX = centerX + radius * cos(curAngle * (Math.PI/180))
-  let curY = centerY + radius * sin(curAngle * (Math.PI/180))
-
-  let prevX = centerX + radius * cos(prevAngle * (Math.PI/180))
-  let prevY = centerY + radius * sin(prevAngle * (Math.PI/180))
-
-  let prevPrevX = centerX + radius * cos(prevPrevAngle * (Math.PI/180))
-  let prevPrevY = centerY + radius * sin(prevPrevAngle * (Math.PI/180))
-  prevPrevAngle = prevAngle;
-  prevAngle = curAngle;
-  stroke(0,0,0)
-  line(prevPrevX, prevPrevY, prevX, prevY);
-  stroke(255,255,255)
-  line(prevX, prevY, curX, curY);
-}
 }
 
 function checkRepeated(str) {
