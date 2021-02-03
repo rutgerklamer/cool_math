@@ -9,6 +9,7 @@ let time = 0;
 let drawLines = false;
 let times = 0;
 
+
 function setup() {
   createCanvas(width, height).position(screen.width/4, 0, 'absolute');
   background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
@@ -16,7 +17,6 @@ function setup() {
   stroke(0,0,0);
   fill(getComputedStyle(document.documentElement).getPropertyValue('--standout'));
   ellipse(width/2, height/2, radius*2, radius*2);
-
 }
 
 function switchLines() {
@@ -28,7 +28,9 @@ function changeStroke(sweight) {
   lineWeight = sweight;
 }
 
+
 function draw() {
+
   clear();
   lines = document.getElementById("lines").value * 4;
   for (i = 0; i < lines; i++) {

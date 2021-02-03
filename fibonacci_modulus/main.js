@@ -4,6 +4,15 @@ let radius = width/2-10;
 let centerX = width/2;
 let centerY = height/2;
 let lineWeight = 1;
+let osc, playing, freq, amp, env;
+
+let attackLevel = 1;
+let releaseLevel = 0;
+
+let attackTime = 0.01;
+let decayTime = 0.1;
+let susPercent = 0.5;
+let releaseTime = 0.1;
 
 
 let curAngle, prevAngle, prevPrevAngle, haveRepeated, divider, fib, sequence, multiplyFib;
@@ -15,6 +24,12 @@ function setup() {
   stroke(0,0,0);
   fill(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
   ellipse(width/2, height/2, radius*2, radius*2);
+  osc = new p5.Oscillator('sine');
+  osc.stop();
+  env = new p5.Env();
+  env.setADSR(attackTime, decayTime, susPercent, releaseTime);
+  osc.amp(env);
+  osc.start();
   start();
 }
 
@@ -26,6 +41,7 @@ function start() {
   haveRepeated = false;
   divider = document.getElementById("divider").value;
   multiplyFib = document.getElementById("multiplier").value;
+  osc.start();
 }
 
 function butt() {
@@ -108,12 +124,23 @@ function wow() {
   setup();
 }
 
+function switchSound() {
+  console.log("switching shshsh")
+  playing = !playing;
+}
+
 function changeStroke(sweight) {
   lineWeight = sweight;
 }
 
+function playOscillator() {
+  osc.start();
+  playing = true;
+}
+
 function draw() {
     if (checkRepeated(sequence) || haveRepeated) {
+      osc.stop();
       strokeWeight(5)
       stroke(0,255,0);
       noFill();
@@ -130,7 +157,11 @@ function draw() {
   }
   let num = fib[fib.length-1].mod(divider).toNumber()
   sequence += num;
-
+  if (playing) {
+      freq = pow(2, (floor(map(num, 0, divider, 0, 126)) - 49) / 12) * 220
+      osc.freq(freq);
+      env.play();
+    }
   curAngle = 360 / divider * num - 90;
 
 
