@@ -5,6 +5,7 @@ let centerY = height/2;
 let points = [[centerX - width/2.5, centerY + height/2.5], [centerX + width/2.5, centerY + height/2.5], [centerX, centerY - height/2.5]];
 let prevRandom = 0;
 let division = 2;
+let clicking = false;
 
 let start = [centerX, centerY];
 
@@ -12,6 +13,14 @@ function setup() {
   createCanvas(width, height).position(screen.width/4, 25, 'absolute');
   background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
   setStart();
+}
+
+function mousePressed() {
+  clicking = true;
+}
+
+function mouseReleased() {
+  clicking = false;
 }
 
 function blockInfinite() {
@@ -38,15 +47,47 @@ function sierpinskiTriangle() {
   setup();
 }
 
+function getDistance(a,b) {
+  return Math.sqrt((a[0]-b[0])*(a[0]-b[0]) + (a[1]-b[1])*(a[1]-b[1]));
+}
+
 function setStart() {
+  clear();
   start = [points[0][0], points[0][1]];
   fill(254,255,12);
+  let closest = 0;
+  let dist = height;
   for (i = 0; i < points.length; i++) {
     ellipse(points[i][0],points[i][1], 10,10);
   }
 }
 
+function changeDivider(i) {
+  division *= i;
+  console.log(division)
+  setStart();
+}
+
+function addPoint() {
+  points.push([centerX, centerY]);
+  setStart();
+}
+
 function draw() {
+  if (clicking && mouseX < width && mouseY < height && mouseX > 0 && mouseY > 0) {
+    let closest = 0;
+    let dist = height;
+    for (i = 0; i < points.length; i++) {
+      if (getDistance([mouseX, mouseY], points[i]) < dist) {
+        closest = i;
+        dist = getDistance([mouseX, mouseY], points[i]);
+      }
+    }
+    points[closest][0] = mouseX;
+    points[closest][1] = mouseY;
+    setStart();
+    return;
+  }
   for (i = 0; i < document.getElementById("speed").value; i++) {
     ellipse(start[0],start[1], document.getElementById("size").value,document.getElementById("size").value);
     let randomMove = Math.floor(random(points.length));

@@ -13,7 +13,7 @@
         </head>
         <body>
 
-          <div style="width: 20%">
+          <div style="width: 20%; float: left">
             <a class="sliderText">SPEED SPEED SPEED SPEED SPEED S</a>
             <input type="range" min="1" max="50" value="20" class="slider" id="speed"><br>
             <a class="sliderText">SIZE SIZE SIZE SIZE SIZE SIZE SIZE S</a>
@@ -23,6 +23,12 @@
             <button onclick="sierpinskiBlock()">sierpinski square</button> <br>
             <button onclick="block()">square</button> <br>
           <a href="../index.html">Go home</a>
+          </div>
+          <div class="right">
+            <a style="color: var(--textColor)">Customisation:</a>
+            <button onclick="addPoint()">Add point</button> <br>
+            <button onclick="changeDivider(1.1)">Up devider</button> <br>
+            <button onclick="changeDivider(0.9)">Lower devider</button> <br>
           </div>
           <div class="info">
             We spawn a set of big points and a dot randomly placed on the screen.
