@@ -10,6 +10,7 @@ The goal of this project is to visualise some cool mathematical phenomenon. Alth
 | Pendulum     | [Demo](https://rutgerklamer.nl/maths/pendulum) |[Youtube](https://www.youtube.com/watch?v=uWzPe_S-RVE) |
 | Toothpicks     | [Demo](https://rutgerklamer.nl/maths/toothpicks) |[Youtube](https://www.youtube.com/watch?v=_UtCli1SgjI&t=90s) |
 | Chaos game      | [Demo](https://rutgerklamer.nl/maths/chaos_game) |[Youtube](https://www.youtube.com/watch?v=kbKtFN71Lfs) |
+| Magic highway      | [Demo](https://rutgerklamer.nl/maths/chaos_game) |[Youtube](https://www.youtube.com/watch?v=wVH4MS6v23U) |
 
 The MIT License (MIT)
 =====================
