@@ -36,10 +36,6 @@ function draw() {
 
 }
 
-function mousePressed() {
-  init();
-}
-
 function init() {
   for (let i = 0; i < co; i++) {
     for (let j = 0; j < rows; j++) {
@@ -51,7 +47,6 @@ function init() {
 }
 
 function conway() {
-  for (i = 0; i < document.getElementById("speed").value/10; i++) {
     for (let x = 1; x < co - 1; x++) {
       for (let y = 1; y < rows - 1; y++) {
         let neighbors = 0;
@@ -80,5 +75,4 @@ function conway() {
     let temp = board;
     board = next;
     next = temp;
-  }
 }
