@@ -5,6 +5,8 @@ let co;
 let rows;
 let grid;
 let next;
+let pause = false;
+let game;
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 0, 'absolute');
@@ -19,24 +21,36 @@ function setup() {
   for (i = 0; i < co; i++) {
     next[i] = new Array(rows);
   }
-  init();
+  init("conway");
+}
+
+function switchPause() {
+  pause = !pause;
 }
 
 function draw() {
-  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
-  conway();
-  for ( let i = 0; i < co;i++) {
-    for ( let j = 0; j < rows;j++) {
-      if ((board[i][j] == 1)) fill(0);
-      else   fill(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
-      stroke(0);
-      rect(i * w, j * w, w-1, w-1);
+  if (!pause) {
+    background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
+    switch(game) {
+      case "conway": conway();
+        break;
+      case "brian": brian();
+        break;
+    }
+    for ( let i = 0; i < co;i++) {
+      for ( let j = 0; j < rows;j++) {
+        if ((board[i][j] == 1)) fill(0);
+        else if ((board[i][j] == 2)) fill(getComputedStyle(document.documentElement).getPropertyValue('--standout'));
+        else   fill(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
+        stroke(0);
+        rect(i * w, j * w, w-1, w-1);
+      }
     }
   }
-
 }
 
-function init() {
+function init(g) {
+  game = g;
   for (let i = 0; i < co; i++) {
     for (let j = 0; j < rows; j++) {
       if (i == 0 || j == 0 || i == co-1 || j == rows-1) board[i][j] = 0;
@@ -46,9 +60,43 @@ function init() {
   }
 }
 
+function brian() {
+      for (let x = 1; x < co - 1; x++) {
+        for (let y = 1; y < rows - 1; y++) {
+          next[x][y] = 0;
+          if (board[x][y] == 1) {
+            next[x][y] = 2;
+            continue;
+          }
+          if (board[x][y] == 2) {
+            next[x][y] = 0;
+            continue;
+          }
+          let neighbors = 0;
+          for (let i = -1; i <= 1; i++) {
+            for (let j = -1; j <= 1; j++) {
+              if (board[x+i][y+j]  == 1) {
+                neighbors += board[x+i][y+j];
+              }
+            }
+          }
+          neighbors -= board[x][y];
+          if (neighbors == 2) {
+              next[x][y] = 1;
+          }
+        }
+      }
+
+      let temp = board;
+      board = next;
+      next = temp;
+}
+
+
 function conway() {
     for (let x = 1; x < co - 1; x++) {
       for (let y = 1; y < rows - 1; y++) {
+        next[x][y] = 0;
         let neighbors = 0;
         for (let i = -1; i <= 1; i++) {
           for (let j = -1; j <= 1; j++) {
