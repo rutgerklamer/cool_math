@@ -1,11 +1,12 @@
 :root {
-  --bgColor: white;
+  --bgColor: #E3AC82;
   --textColor: black;
   --textHoverColor: #ED2939;
-  --yellow: #FFFF01;
+  --yellow: #C9AC9B;
 }
 
-body {
+body {  font-family: "Times New Roman", Times, serif;
+
   background-color: var(--bgColor);
 }
 
@@ -66,6 +67,13 @@ button {
 
 button:hover {
   background-color: var(--textHoverColor);
+}
+
+
+button:active {
+  background-color: #6A3F14;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 input[type=submit] {
