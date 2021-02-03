@@ -46,7 +46,7 @@ function draw() {
     }
   }
 
-  if (clicking) {
+  if (clicking && mouseX < width && mouseX > 0 && mouseY < height && mouseY > 0) {
     tri[closest][0] = mouseX;
     tri[closest][1] = mouseY;
   }

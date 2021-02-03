@@ -153,39 +153,39 @@ function draw() {
     steps++;
     if (steps > 10-document.getElementById("speed").value) {
       for (i = 0; i < document.getElementById("speed").value; i++) {
-        steps = 0;
-        if (multiplyFib > 0) {
-          fib.push(Big(fib[fib.length-1].add(fib[fib.length-2].times(multiplyFib))))
-      } else {
-        fib.push(Big(fib[fib.length-1].add(fib[fib.length-2])));
-      }
-      let num = fib[fib.length-1].mod(divider).toNumber()
-      sequence += num;
-      if (playing) {
-          freq = pow(2, (floor(map(num, 0, divider, 0, 126)) - 49) / 12) * 220
-          osc.freq(freq);
-          env.play();
-        }
-      curAngle = 360 / divider * num - 90;
-
-
-
-      let curX = centerX + radius * cos(curAngle * (Math.PI/180))
-      let curY = centerY + radius * sin(curAngle * (Math.PI/180))
-
-      let prevX = centerX + radius * cos(prevAngle * (Math.PI/180))
-      let prevY = centerY + radius * sin(prevAngle * (Math.PI/180))
-
-      let prevPrevX = centerX + radius * cos(prevPrevAngle * (Math.PI/180))
-      let prevPrevY = centerY + radius * sin(prevPrevAngle * (Math.PI/180))
-      prevPrevAngle = prevAngle;
-      prevAngle = curAngle;
-      stroke(0,0,0)
-      line(prevPrevX, prevPrevY, prevX, prevY);
-      stroke(255,255,255)
-      line(prevX, prevY, curX, curY);
+      steps = 0;
+      if (multiplyFib > 0) {
+        fib.push(Big(fib[fib.length-1].add(fib[fib.length-2].times(multiplyFib))))
+    } else {
+      fib.push(Big(fib[fib.length-1].add(fib[fib.length-2])));
     }
+    let num = fib[fib.length-1].mod(divider).toNumber()
+    sequence += num;
+    if (playing) {
+        freq = pow(2, (floor(map(num, 0, divider, 0, 126)) - 49) / 12) * 220
+        osc.freq(freq);
+        env.play();
+      }
+    curAngle = 360 / divider * num - 90;
+
+
+
+    let curX = centerX + radius * cos(curAngle * (Math.PI/180))
+    let curY = centerY + radius * sin(curAngle * (Math.PI/180))
+
+    let prevX = centerX + radius * cos(prevAngle * (Math.PI/180))
+    let prevY = centerY + radius * sin(prevAngle * (Math.PI/180))
+
+    let prevPrevX = centerX + radius * cos(prevPrevAngle * (Math.PI/180))
+    let prevPrevY = centerY + radius * sin(prevPrevAngle * (Math.PI/180))
+    prevPrevAngle = prevAngle;
+    prevAngle = curAngle;
+    stroke(0,0,0)
+    line(prevPrevX, prevPrevY, prevX, prevY);
+    stroke(255,255,255)
+    line(prevX, prevY, curX, curY);
   }
+}
 
 }
 
