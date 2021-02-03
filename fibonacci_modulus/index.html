@@ -13,10 +13,10 @@
         </head>
         <body>
           <div style="width: 20%; float:left;">
-            Divider:<br> <input type="text" id="divider" value="25"><br> <br>
+            <a style="color: var(--textColor)">Options:</a> <br>
+            Divider: <input type="text" id="divider" value="25"><br> <br>
             Fibonacci multiplier (0 no multiplier): <input type="text" id="multiplier" value="0"> <br> <br>
-            Fibonacci start (seperate by ":"): <input type="text" id="fibstart" value="0:1"><br>
-            <a style="color: var(--textColor)">Options:</a>
+            Fibonacci start (seperate by ":"): <input type="text" id="fibstart" value="0:1"><br><br>
             <button onclick="setup()">Try it</button> <br>
             <button onclick="changeStroke(0.1)">Linewidth 0.1</button> <br>
             <button onclick="changeStroke(0.3)">Linewidth 0.3</button> <br>
@@ -26,7 +26,6 @@
             <a class="sliderText">SPEED SPEED SPEED SPEED SPEED S</a>
             <input type="range" min="1" max="10" value="1" class="slider" id="speed"> <br>
             <a href="../index.html">Go home</a>
-
         </div>
         <div class="right">
           <a style="color: var(--textColor)">Preset/random:</a>
