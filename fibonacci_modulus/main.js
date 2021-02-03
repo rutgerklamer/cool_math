@@ -19,6 +19,8 @@ let steps = 0;
 let curAngle, prevAngle, prevPrevAngle, haveRepeated, divider, fib, sequence, multiplyFib;
 
 function setup() {
+  prevAngle = 0;
+  prevPrevAngle = 0;
   createCanvas(width, height).position(screen.width/4, 25, 'absolute');
   background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
   strokeWeight(5)
@@ -132,6 +134,7 @@ function switchSound() {
 
 function changeStroke(sweight) {
   lineWeight = sweight;
+  setup();
 }
 
 function playOscillator() {
