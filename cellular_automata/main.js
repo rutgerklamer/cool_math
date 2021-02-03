@@ -7,6 +7,9 @@ let grid;
 let next;
 let pause = false;
 let game;
+let clicking = false;
+let states;
+let lastPos = [0,0];
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 0, 'absolute');
@@ -21,21 +24,42 @@ function setup() {
   for (i = 0; i < co; i++) {
     next[i] = new Array(rows);
   }
-  init("conway");
+  init("conway", 2);
 }
 
 function switchPause() {
   pause = !pause;
 }
 
+
+function mousePressed() {
+  clicking = true;
+}
+
+function mouseReleased() {
+  clicking = false;
+}
+
 function draw() {
-  if (!pause) {
+  if (clicking) {
+    if (mouseX > w && mouseX < width-w && mouseY > w && mouseY < height - w && !(lastPos[0] == floor(mouseX/w) && lastPos[1] == floor(mouseY/w))) {
+      if (board[floor(mouseX/w)][floor(mouseY/w)] + 1 < states) {
+        board[floor(mouseX/w)][floor(mouseY/w)]++;
+      } else {
+        board[floor(mouseX/w)][floor(mouseY/w)] = 0;
+      }
+      lastPos = [floor(mouseX/w), floor(mouseY/w)];
+    }
+  }
+
     background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
-    switch(game) {
-      case "conway": conway();
-        break;
-      case "brian": brian();
-        break;
+    if (!pause) {
+      switch(game) {
+        case "conway": conway();
+          break;
+        case "brian": brian();
+          break;
+      }
     }
     for ( let i = 0; i < co;i++) {
       for ( let j = 0; j < rows;j++) {
@@ -46,15 +70,15 @@ function draw() {
         rect(i * w, j * w, w-1, w-1);
       }
     }
-  }
 }
 
-function init(g) {
+function init(g, s) {
+  states = s;
   game = g;
   for (let i = 0; i < co; i++) {
     for (let j = 0; j < rows; j++) {
       if (i == 0 || j == 0 || i == co-1 || j == rows-1) board[i][j] = 0;
-      else board[i][j] = floor(random(2));
+      else board[i][j] = floor(random(states));
       next[i][j] = 0;
     }
   }
