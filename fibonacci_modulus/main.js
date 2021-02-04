@@ -22,7 +22,7 @@ function setup() {
   prevAngle = 0;
   prevPrevAngle = 0;
   createCanvas(width, height).position(screen.width/4, 25, 'absolute');
-  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
+  background(0,0,0,0);
   strokeWeight(5)
   stroke(0,0,0);
   fill(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));

@@ -11,7 +11,7 @@ let start = [centerX, centerY];
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 25, 'absolute');
-  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
+  background(0,0,0,0);
   setStart();
 }
 

@@ -33,7 +33,7 @@ function changeGravity(g) {
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 25, 'absolute');
-  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
+  background(0,0,0,0)
   pixelDensity(1);
   a1 = Math.PI / 2;
   a2 = Math.PI / 2;

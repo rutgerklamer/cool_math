@@ -8,7 +8,7 @@ let ratio, animate, prevValue;
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 0, 'absolute');
-  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
+  background(0,0,0,0)
   strokeWeight(1)
   stroke(0,0,0);
   fill(getComputedStyle(document.documentElement).getPropertyValue('--standout'));

@@ -12,7 +12,7 @@ let times = 0;
 
 function setup() {
   createCanvas(width, height).position(screen.width/4, 0, 'absolute');
-  background(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'))
+  background(0,0,0,0)
   strokeWeight(2)
   stroke(0,0,0);
   fill(getComputedStyle(document.documentElement).getPropertyValue('--standout'));
