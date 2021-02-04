@@ -23,7 +23,7 @@ a:link, a:visited, a, p {
   color: var(--textColor);
   line-height: 48px;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 a:hover {
@@ -31,7 +31,8 @@ a:hover {
 }
 
 h3 {
-  color: var(--textHoverColor);
+  font-size: 12px;
+  color: var(--textColor);
 }
 
 input[type=text], select {
@@ -55,7 +56,7 @@ input[type=text], select {
   width: 40%;
   margin-left: 30%;
   margin-top: 50%;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 button {
