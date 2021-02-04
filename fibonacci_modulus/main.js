@@ -25,7 +25,7 @@ function setup() {
   background(0,0,0,0);
   strokeWeight(5)
   stroke(0,0,0);
-  fill(getComputedStyle(document.documentElement).getPropertyValue('--bgColor'));
+  noFill();
   ellipse(width/2, height/2, radius*2, radius*2);
   osc = new p5.Oscillator('triangle');
   osc.stop();
@@ -128,7 +128,7 @@ function wow() {
 }
 
 function switchSound() {
-  console.log("switching shshsh")
+  osc.start();
   playing = !playing;
 }
 
