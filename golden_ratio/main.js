@@ -39,10 +39,9 @@ function displaySeeds() {
 }
 
 function draw() {
-
   if (animate) {
     clear();
-    ratio += deltaTime/10000000;
+    ratio += deltaTime/10000000*(document.getElementById("speed").value/10);
     displaySeeds();
   } else if (document.getElementById("seeds").value != prevValue) {
     clear();

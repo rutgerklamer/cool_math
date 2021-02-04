@@ -165,7 +165,7 @@ function draw() {
     let num = fib[fib.length-1].mod(divider).toNumber()
     sequence += num;
     if (playing) {
-        freq = pow(2, (floor(map(num, 0, divider, 0, 58)) - 49) / 12) * 220
+        freq = pow(2, (floor(map(num, 0, divider, 0, 58) ) - 49) / 12) * 220
         osc.freq(freq);
         env.play();
       }
