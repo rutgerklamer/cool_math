@@ -1,27 +1,556 @@
 <!doctype html>
-
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8" >
-        <title>cool math</title>
-        <link rel="stylesheet" href="./style.css">
-        </head>
-        <body>
-          <div class="center" style="width: 40%">
-            <h1>Cool math visualisations you can fool around with.
-            Don't mind the code, it's a mess and I don't care. BTW we're <a href="https://github.com/rutgerklamer/cool_math"> open source. </a>  (Information is at the bottom, customisations
-            are on the side(s)) </h1>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cool Math</title>
+  <meta name="description" content="Eight interactive mathematical visualisations on a single page.">
+  <link rel="stylesheet" href="assets/app.css">
+</head>
+<body id="top">
+  <header class="hero">
+    <div class="wrap">
+      <h1>Cool math visualisations you can fool around with.</h1>
+      <p class="tagline">Don't mind the code, it's a mess and I don't care. BTW we're <a href="https://github.com/rutgerklamer/cool_math">open source.</a> (Customisations are on the side, information is at the bottom.)</p>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Visualisations">
+    <div class="wrap toc-inner">
+      <a href="#fibonacci">Fibonacci Modulus</a>
+      <a href="#golden">Golden Ratio</a>
+      <a href="#trig">Beautiful Trigonometry</a>
+      <a href="#life">Cellular Automata</a>
+      <a href="#pendulum">Pendulum</a>
+      <a href="#toothpicks">Toothpicks</a>
+      <a href="#chaos">Chaos game</a>
+      <a href="#euler">Magic highway</a>
+      <a href="#times">Times tables</a>
+      <a href="#recaman">Recamán sequence</a>
+      <a href="#ant">Langton's ant</a>
+      <a href="#julia">Mandelbrot &amp; Julia</a>
+      <a href="#ulam">Ulam spiral</a>
+      <a href="#buffon">Buffon's needle</a>
+      <a href="#harmonograph">Harmonograph</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+
+    <!-- 01 Fibonacci -->
+    <section class="demo" id="fibonacci">
+      <header class="demo-head">
+        <span class="num">01</span>
+        <div>
+          <h2>Fibonacci modulus</h2>
+          <p class="lede">Take a Fibonacci-like sequence modulo <var>n</var> and connect consecutive remainders on a circle of <var>n</var> points.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field">
+            <span>Preset</span>
+            <select data-preset>
+              <option value="">Choose a preset…</option>
+              <option value="675,947,6,7">Woow</option>
+              <option value="737,2,9,3">Butt / mushroom</option>
+              <option value="972,164,5,2">Just great</option>
+              <option value="972,168,5,2">Gridlike hypersphere</option>
+              <option value="972,682,5,2">Shrek</option>
+              <option value="1244160,666,2,6">Perfect circle</option>
+              <option value="680,670,2,2">Eye</option>
+              <option value="376,854,9,10">Infinite</option>
+              <option value="254,817,0,1">Straight-line symmetry</option>
+              <option value="688,662,2,8">Mandala</option>
+            </select>
+          </label>
+          <div class="grid2">
+            <label class="field"><span>Modulus <var>n</var></span><input type="number" data-k="mod" min="2" max="10000000" value="25"></label>
+            <label class="field"><span>Multiplier <var>m</var></span><input type="number" data-k="mult" min="1" max="1000" value="1"></label>
+            <label class="field"><span>Start <var>F₀</var></span><input type="number" data-k="a0" min="0" value="0"></label>
+            <label class="field"><span>Start <var>F₁</var></span><input type="number" data-k="b0" min="0" value="1"></label>
           </div>
-          <div class="center" style="width: 50%">
-            <a href="./fibonacci_modulus/index.html"> Fibonacci Modulus </a><br>
-            <a href="./golden_ratio/index.html"> Golden Ratio </a> <br>
-            <a href="./beautiful_trigonometry/index.html"> Beautiful Trigonometry </a> <br>
-            <a href="./cellular_automata/index.html"> Cellular Automata </a> <br>
-            <a href="./pendulum/index.html"> Pendulum </a> <br>
-            <a href="./toothpicks/index.html"> Toothpicks </a> <br>
-            <a href="./chaos_game/index.html"> Chaos game </a> <br>
-            <a href="./magic_highway/index.html"> Magic highway </a>
-            </div>
-        </body>
+          <label class="field"><span>Steps per frame <output data-for="speed"></output></span><input type="range" data-k="speed" min="1" max="400" value="2"></label>
+          <label class="field"><span>Line width <output data-for="width"></output></span><input type="range" data-k="width" min="0.1" max="3" step="0.1" value="0.8"></label>
+          <label class="check"><input type="checkbox" data-k="sound"> Play the sequence as notes</label>
+          <div class="buttons">
+            <button data-act="replay" class="primary">Replay</button>
+            <button data-act="random">Random</button>
+          </div>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>The sequence follows <code>F(k+1) = F(k) + m·F(k−1)</code>. Because there are only <var>n</var>² possible pairs of remainders, the sequence mod <var>n</var> must eventually repeat — for the ordinary Fibonacci numbers this cycle length is called the <em>Pisano period</em>. For <var>n</var> = 3 the remainders are 0 1 1 2 0 2 2 1, and then it starts over.</p>
+        <p>Each remainder is a point on the circle; each step draws a chord from the previous remainder to the next. When the starting pair comes back, the circle lights up and the period is shown.</p>
+      </details>
+    </section>
+
+    <!-- 02 Golden ratio -->
+    <section class="demo" id="golden">
+      <header class="demo-head">
+        <span class="num">02</span>
+        <div>
+          <h2>Golden ratio</h2>
+          <p class="lede">Place each seed a fixed angle further around than the last. At the golden angle, you get a sunflower.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field"><span>Turn per seed <output data-for="angle"></output></span><input type="range" data-k="angle" min="0" max="360" step="0.001" value="137.508"></label>
+          <div class="chips">
+            <button data-act="angle" data-v="137.50776">φ</button>
+            <button data-act="angle" data-v="149.11688">√2</button>
+            <button data-act="angle" data-v="50.97335">π</button>
+            <button data-act="angle" data-v="258.58145">e</button>
+            <button data-act="angle" data-v="51.42857">1/7</button>
+          </div>
+          <label class="field"><span>Seeds <output data-for="seeds"></output></span><input type="range" data-k="seeds" min="20" max="3000" value="800"></label>
+          <label class="field"><span>Seed size <output data-for="size"></output></span><input type="range" data-k="size" min="0.2" max="1.6" step="0.05" value="0.9"></label>
+          <label class="field"><span>Drift speed <output data-for="drift"></output></span><input type="range" data-k="drift" min="0" max="100" value="20"></label>
+          <label class="check"><input type="checkbox" data-k="animate"> Animate the angle</label>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>Seed <var>i</var> sits at angle <code>i·θ</code> and radius <code>c·√i</code> (Vogel's model), so every seed gets equal area. If θ is a rational fraction of a turn like 1/7, seeds line up in 7 straight spokes and waste space. The golden ratio φ is the "most irrational" number — its continued fraction is all ones — so the golden angle (≈ 137.5°) never lines up, and the seeds pack perfectly. Turn on the animation and watch spirals appear whenever θ passes close to a simple fraction.</p>
+      </details>
+    </section>
+
+    <!-- 03 Trigonometry -->
+    <section class="demo" id="trig">
+      <header class="demo-head">
+        <span class="num">03</span>
+        <div>
+          <h2>Beautiful trigonometry</h2>
+          <p class="lede">Every ball moves only back and forth along a straight line. Together, they roll in a circle.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field"><span>Balls <output data-for="count"></output></span><input type="range" data-k="count" min="1" max="24" value="8"></label>
+          <label class="field"><span>Speed <output data-for="speed"></output></span><input type="range" data-k="speed" min="0.1" max="3" step="0.1" value="1"></label>
+          <label class="check"><input type="checkbox" data-k="lines"> Show the lines</label>
+          <label class="check"><input type="checkbox" data-k="inner"> Reveal the hidden circle</label>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>Ball <var>k</var> lives on a diameter at angle <code>θₖ = kπ/N</code> and sits at distance <code>R·cos(t − θₖ)</code> from the centre: pure simple harmonic motion. Yet all N balls always lie on a circle of radius R/2 that rolls around inside the big one. This is the <em>Tusi couple</em>, described by Nasir al-Din al-Tusi in 1247.</p>
+      </details>
+    </section>
+
+    <!-- 04 Cellular automata -->
+    <section class="demo" id="life">
+      <header class="demo-head">
+        <span class="num">04</span>
+        <div>
+          <h2>Cellular automata</h2>
+          <p class="lede">Each cell lives or dies based only on its eight neighbours. Draw on the grid to plant life.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas class="paintable"></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field">
+            <span>Rule</span>
+            <select data-k="rule">
+              <option value="B3/S23">Conway's Game of Life — B3/S23</option>
+              <option value="B36/S23">HighLife — B36/S23</option>
+              <option value="B3678/S34678">Day &amp; Night — B3678/S34678</option>
+              <option value="B2/S">Seeds — B2/S</option>
+              <option value="brain">Brian's Brain</option>
+            </select>
+          </label>
+          <label class="field"><span>Generations / second <output data-for="speed"></output></span><input type="range" data-k="speed" min="1" max="60" value="15"></label>
+          <label class="field"><span>Random fill density <output data-for="density"></output></span><input type="range" data-k="density" min="0.05" max="0.6" step="0.01" value="0.3"></label>
+          <div class="buttons">
+            <button data-act="toggle" class="primary">Pause</button>
+            <button data-act="step">Step</button>
+            <button data-act="randomize">Randomize</button>
+            <button data-act="clear">Clear</button>
+          </div>
+          <p class="hint">Click and drag on the grid to draw. Starting on a live cell erases instead.</p>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>Rules are written as <code>B/S</code>: a dead cell is <strong>B</strong>orn with the listed neighbour counts, a live cell <strong>S</strong>urvives with them. Conway's B3/S23 is famous for gliders and guns; HighLife adds a self-replicator; Day &amp; Night is symmetric between life and death. Brian's Brain has three states — a firing cell always becomes "dying", then dead — which makes everything move.</p>
+      </details>
+    </section>
+
+    <!-- 05 Pendulum -->
+    <section class="demo" id="pendulum">
+      <header class="demo-head">
+        <span class="num">05</span>
+        <div>
+          <h2>Double pendulum</h2>
+          <p class="lede">Two rods, two weights, one of the simplest chaotic systems. Grab a weight to throw it.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas class="paintable"></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <div class="grid2">
+            <label class="field"><span>Length 1 <output data-for="l1"></output></span><input type="range" data-k="l1" min="0.3" max="1.4" step="0.01" value="1"></label>
+            <label class="field"><span>Length 2 <output data-for="l2"></output></span><input type="range" data-k="l2" min="0.3" max="1.4" step="0.01" value="1"></label>
+            <label class="field"><span>Mass 1 <output data-for="m1"></output></span><input type="range" data-k="m1" min="0.2" max="5" step="0.1" value="1"></label>
+            <label class="field"><span>Mass 2 <output data-for="m2"></output></span><input type="range" data-k="m2" min="0.2" max="5" step="0.1" value="1"></label>
+          </div>
+          <label class="field"><span>Gravity <output data-for="g"></output></span><input type="range" data-k="g" min="0.5" max="30" step="0.1" value="9.8"></label>
+          <label class="check"><input type="checkbox" data-k="twins" checked> Chaos twins (5 copies, 0.001° apart)</label>
+          <div class="buttons">
+            <button data-act="reset" class="primary">Reset</button>
+            <button data-act="random">Random start</button>
+          </div>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>The motion follows the Lagrangian equations of a double pendulum, integrated with fourth-order Runge–Kutta. With "chaos twins" on, five pendulums start almost identically — a thousandth of a degree apart. For a few seconds they move as one; then they diverge completely. That sensitivity to initial conditions is what "chaos" means.</p>
+      </details>
+    </section>
+
+    <!-- 06 Toothpicks -->
+    <section class="demo" id="toothpicks">
+      <header class="demo-head">
+        <span class="num">06</span>
+        <div>
+          <h2>Toothpick sequence</h2>
+          <p class="lede">Put a new toothpick, crosswise, on every free end. Repeat. A fractal grows out of one rule.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field"><span>Toothpick length <output data-for="len"></output></span><input type="range" data-k="len" min="4" max="40" value="10"></label>
+          <label class="field"><span>Generations / second <output data-for="speed"></output></span><input type="range" data-k="speed" min="1" max="30" value="6"></label>
+          <label class="field"><span>Thickness <output data-for="width"></output></span><input type="range" data-k="width" min="0.5" max="4" step="0.1" value="1.5"></label>
+          <div class="buttons">
+            <button data-act="toggle" class="primary">Pause</button>
+            <button data-act="step">Step</button>
+            <button data-act="reset">Reset</button>
+          </div>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>Start with one toothpick. In each generation, every end that touches no other toothpick gets a new toothpick centred on it, at right angles. The running total — 1, 3, 7, 11, 15, 23, 35, 43, … — is <a href="https://oeis.org/A139250" target="_blank" rel="noopener">OEIS A139250</a>. Watch the counter: every time the generation hits a power of two, the pattern is a perfect square-ish "completed" shape.</p>
+      </details>
+    </section>
+
+    <!-- 07 Chaos game -->
+    <section class="demo" id="chaos">
+      <header class="demo-head">
+        <span class="num">07</span>
+        <div>
+          <h2>Chaos game</h2>
+          <p class="lede">Pick a random corner, jump part of the way towards it, drop a dot. Order emerges from pure randomness.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas class="paintable"></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field">
+            <span>Preset</span>
+            <select data-preset>
+              <option value="">Choose a preset…</option>
+              <option value="tri">Sierpiński triangle</option>
+              <option value="carpet">Sierpiński carpet</option>
+              <option value="squareCentre">Square + centre</option>
+              <option value="pentagon">Pentaflake</option>
+              <option value="hexagon">Hexagon snowflake</option>
+              <option value="squareNoRepeat">Square, no repeats</option>
+              <option value="squareNoNeighbour">Square, no anticlockwise</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Vertex rule</span>
+            <select data-k="rule">
+              <option value="free">Any vertex</option>
+              <option value="no-repeat">Never the same vertex twice</option>
+              <option value="no-ccw">Never the anticlockwise neighbour of the last</option>
+              <option value="no-neighbour-after-repeat">After a repeat, never a neighbour</option>
+            </select>
+          </label>
+          <label class="field"><span>Jump fraction <output data-for="ratio"></output></span><input type="range" data-k="ratio" min="0.1" max="0.9" step="0.001" value="0.5"></label>
+          <label class="field"><span>Dots per frame <output data-for="speed"></output></span><input type="range" data-k="speed" min="10" max="20000" value="2000"></label>
+          <label class="check"><input type="checkbox" data-k="color" checked> Colour dots by vertex</label>
+          <div class="buttons">
+            <button data-act="addVertex">Add vertex</button>
+            <button data-act="removeVertex">Remove vertex</button>
+          </div>
+          <p class="hint">Drag the vertices to reshape the fractal.</p>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>With three corners and a jump of ½, every dot lands on the Sierpiński triangle — no matter where you start. Change the number of corners, the jump fraction, or forbid certain choices (like picking the same corner twice), and entirely different fractals appear. The colours show which corner each dot jumped towards.</p>
+      </details>
+    </section>
+
+    <!-- 08 Magic highway -->
+    <section class="demo" id="euler">
+      <header class="demo-head">
+        <span class="num">08</span>
+        <div>
+          <h2>The magic highway</h2>
+          <p class="lede">Three different "centres" of any triangle always lie on one straight line. Drag the corners and try to break it.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas class="paintable"></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <ul class="legend">
+            <li><label class="check"><input type="checkbox" data-k="centroid" checked><i style="--c: var(--c1)"></i> Centroid <var>G</var> &amp; medians</label></li>
+            <li><label class="check"><input type="checkbox" data-k="circum" checked><i style="--c: var(--c2)"></i> Circumcentre <var>O</var> &amp; circumcircle</label></li>
+            <li><label class="check"><input type="checkbox" data-k="ortho" checked><i style="--c: var(--c3)"></i> Orthocentre <var>H</var> &amp; altitudes</label></li>
+            <li><label class="check"><input type="checkbox" data-k="nine"><i style="--c: var(--c5)"></i> Nine-point circle <var>N</var></label></li>
+            <li><label class="check"><input type="checkbox" data-k="incircle"><i style="--c: var(--c4)"></i> Incentre <var>I</var> &amp; incircle</label></li>
+            <li><label class="check"><input type="checkbox" data-k="line" checked><i style="--c: var(--ink)"></i> Euler line</label></li>
+          </ul>
+          <div class="buttons">
+            <button data-act="reset">Reset triangle</button>
+            <button data-act="random">Random triangle</button>
+          </div>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>The centroid (where the medians meet), the circumcentre (centre of the circle through all three corners) and the orthocentre (where the altitudes meet) are always collinear — this is the <em>Euler line</em>. Even better, G always sits exactly a third of the way from O to H, so |GH| = 2·|OG|. The centre of the nine-point circle lies on it too, halfway between O and H. The incentre usually does <em>not</em> — it only joins the line when the triangle is isosceles.</p>
+      </details>
+    </section>
+
+    <!-- 09 Times tables -->
+    <section class="demo" id="times">
+      <header class="demo-head">
+        <span class="num">09</span>
+        <div>
+          <h2>Times tables</h2>
+          <p class="lede">Put points on a circle. Connect point <var>n</var> to point <var>n</var> × <var>k</var>. At <var>k</var> = 2 a cardioid shows up. Nobody invited it.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field"><span>Times <output data-for="k"></output></span><input type="range" data-k="k" min="0" max="100" step="0.01" value="2"></label>
+          <div class="chips">
+            <button data-act="k" data-v="2">2</button>
+            <button data-act="k" data-v="3">3</button>
+            <button data-act="k" data-v="5">5</button>
+            <button data-act="k" data-v="21">21</button>
+            <button data-act="k" data-v="51">51</button>
+          </div>
+          <label class="field"><span>Points <output data-for="points"></output></span><input type="range" data-k="points" min="10" max="500" value="200"></label>
+          <label class="field"><span>Speed <output data-for="speed"></output></span><input type="range" data-k="speed" min="0.01" max="2" step="0.01" value="0.2"></label>
+          <label class="check"><input type="checkbox" data-k="animate"> Count up by itself</label>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>Number the points 0 to <var>N</var> − 1. For every point <var>n</var>, draw a line to point <var>n</var> · <var>k</var>, wrapping around with modulo <var>N</var>. That's all of it.</p>
+        <p><var>k</var> = 2 gives a cardioid, <var>k</var> = 3 a nephroid, and in general you get <var>k</var> − 1 cusps. Let it count up and the shapes melt into each other. Same trick as the Fibonacci one up top, just with multiplication.</p>
+      </details>
+    </section>
+
+    <!-- 10 Recamán -->
+    <section class="demo" id="recaman">
+      <header class="demo-head">
+        <span class="num">10</span>
+        <div>
+          <h2>Recamán sequence</h2>
+          <p class="lede">Go back if you can. Otherwise go forward. Draw every jump as a half circle.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field"><span>Terms <output data-for="terms"></output></span><input type="range" data-k="terms" min="10" max="1000" value="80"></label>
+          <label class="field"><span>Terms per second <output data-for="speed"></output></span><input type="range" data-k="speed" min="1" max="60" value="6"></label>
+          <label class="check"><input type="checkbox" data-k="sound"> Play it</label>
+          <div class="buttons">
+            <button data-act="replay">Replay</button>
+          </div>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>Start at 0. On step <var>n</var>, jump back <var>n</var> if that lands on a positive number you haven't been to yet. If not, jump forward <var>n</var>. So 0, 1, 3, 6, 2, 7, 13, 20, 12, 21, 11, …</p>
+        <p>Nobody knows if every whole number eventually shows up. People do know it sounds nice. Tick the box.</p>
+      </details>
+    </section>
+
+    <!-- 11 Langton's ant -->
+    <section class="demo" id="ant">
+      <header class="demo-head">
+        <span class="num">11</span>
+        <div>
+          <h2>Langton's ant</h2>
+          <p class="lede">One ant, two rules, ten thousand steps of mess. Then out of nowhere it builds a highway.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field">
+            <span>Rule</span>
+            <select data-k="rule">
+              <option value="RL">RL (the classic ant)</option>
+              <option value="RLR">RLR</option>
+              <option value="LLRR">LLRR</option>
+              <option value="LRRRRRLLR">LRRRRRLLR</option>
+              <option value="RRLLLRLLLRRR">RRLLLRLLLRRR</option>
+            </select>
+          </label>
+          <label class="field"><span>Steps per frame <output data-for="speed"></output></span><input type="range" data-k="speed" min="1" max="2000" value="60"></label>
+          <div class="buttons">
+            <button data-act="toggle">Pause</button>
+            <button data-act="reset">Reset</button>
+          </div>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>On an empty cell the ant turns right, on a black one it turns left. Either way it flips the cell and steps forward. That's it.</p>
+        <p>For about 10,000 steps it makes a mess. Then it starts building a diagonal "highway" and never stops. Nobody has proven it always does. The longer rules give every colour its own turn: R is right, L is left, one letter per colour.</p>
+      </details>
+    </section>
+
+    <!-- 12 Mandelbrot & Julia -->
+    <section class="demo" id="julia">
+      <header class="demo-head">
+        <span class="num">12</span>
+        <div>
+          <h2>Mandelbrot &amp; Julia</h2>
+          <p class="lede"><var>z</var> → <var>z</var>² + <var>c</var>, over and over. Drag on the picture to pick <var>c</var>.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas class="paintable"></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field">
+            <span>Show</span>
+            <select data-k="mode">
+              <option value="julia">Julia set for c</option>
+              <option value="mandelbrot">Mandelbrot set</option>
+            </select>
+          </label>
+          <label class="field"><span>Iterations <output data-for="iter"></output></span><input type="range" data-k="iter" min="10" max="300" value="80"></label>
+          <div class="buttons">
+            <button data-act="c" data-v="-0.123,0.745">Douady's rabbit</button>
+            <button data-act="c" data-v="0,1">Dendrite</button>
+            <button data-act="c" data-v="-0.75,0.1">San Marco</button>
+            <button data-act="c" data-v="-0.391,-0.587">Siegel disk</button>
+            <button data-act="c" data-v="0.285,0.01">Swirls</button>
+          </div>
+          <p class="hint">In the Mandelbrot view the yellow dot is c.</p>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>Take a number <var>z</var>, square it, add <var>c</var>, repeat. Either it runs off to infinity or it doesn't. The Julia set for <var>c</var> is every starting <var>z</var> that doesn't (black). Red is how long the rest took to escape.</p>
+        <p>The Mandelbrot set is every <var>c</var> whose Julia set comes in one piece. So every point you drag through is its own Julia set: deep inside you get a blob, near the edge the weird ones, outside it falls apart into dust.</p>
+      </details>
+    </section>
+
+    <!-- 13 Ulam spiral -->
+    <section class="demo" id="ulam">
+      <header class="demo-head">
+        <span class="num">13</span>
+        <div>
+          <h2>Ulam spiral</h2>
+          <p class="lede">Write the numbers in a spiral and colour the primes. They line up. They shouldn't.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field"><span>Cell size <output data-for="cell"></output></span><input type="range" data-k="cell" min="2" max="40" value="4"></label>
+          <label class="field"><span>Start at <output data-for="start"></output></span><input type="range" data-k="start" min="1" max="100" value="1"></label>
+          <div class="buttons">
+            <button data-act="start" data-v="1">Start at 1</button>
+            <button data-act="start" data-v="41">Start at 41</button>
+          </div>
+          <label class="check"><input type="checkbox" data-k="numbers"> Show the numbers (big cells only)</label>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>Stanisław Ulam doodled this in a boring meeting in 1963. Primes are supposed to look pretty random, yet they bunch up along diagonals. Those diagonals are quadratics that happen to hit a lot of primes.</p>
+        <p>Start at 41 and look at the diagonal through the middle. That's Euler's <var>n</var>² + <var>n</var> + 41, which is prime for every <var>n</var> from 0 to 39.</p>
+      </details>
+    </section>
+
+    <!-- 14 Buffon's needle -->
+    <section class="demo" id="buffon">
+      <header class="demo-head">
+        <span class="num">14</span>
+        <div>
+          <h2>Buffon's needle</h2>
+          <p class="lede">Throw needles on lined paper. Count how many cross a line. Get π.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <label class="field"><span>Needle length <output data-for="len"></output></span><input type="range" data-k="len" min="0.2" max="1" step="0.05" value="1"></label>
+          <label class="field"><span>Needles per frame <output data-for="speed"></output></span><input type="range" data-k="speed" min="1" max="500" value="5"></label>
+          <div class="buttons">
+            <button data-act="toggle">Pause</button>
+            <button data-act="reset">Reset</button>
+          </div>
+          <p class="hint">Only the first 4,000 needles get drawn. The counting keeps going.</p>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>If a needle is as long as the gap between the lines, the chance it crosses one is 2/π. Turn that around and π ≈ 2 × needles ÷ crossings. Shorter needles work too, you just scale by the length.</p>
+        <p>The Comte de Buffon worked this out in 1777. It gets to π slowly. Really slowly. That's part of the charm.</p>
+      </details>
+    </section>
+
+    <!-- 15 Harmonograph -->
+    <section class="demo" id="harmonograph">
+      <header class="demo-head">
+        <span class="num">15</span>
+        <div>
+          <h2>Harmonograph</h2>
+          <p class="lede">Two pendulums move a pen, a third swings the paper. Friction does the rest.</p>
+        </div>
+      </header>
+      <div class="demo-body">
+        <div class="stage"><canvas></canvas><div class="hud"></div></div>
+        <aside class="panel">
+          <div class="grid2">
+            <label class="field"><span>x <output data-for="f1"></output></span><input type="range" data-k="f1" min="1" max="6" step="0.001" value="2"></label>
+            <label class="field"><span>y <output data-for="f2"></output></span><input type="range" data-k="f2" min="1" max="6" step="0.001" value="3.006"></label>
+            <label class="field"><span>Paper <output data-for="f3"></output></span><input type="range" data-k="f3" min="1" max="6" step="0.001" value="3"></label>
+            <label class="field"><span>Phase <output data-for="phase"></output></span><input type="range" data-k="phase" min="0" max="3.1416" step="0.01" value="1.57"></label>
+          </div>
+          <label class="field"><span>Paper swing <output data-for="rotary"></output></span><input type="range" data-k="rotary" min="0" max="1" step="0.01" value="0.4"></label>
+          <label class="field"><span>Friction <output data-for="damp"></output></span><input type="range" data-k="damp" min="0.0005" max="0.01" step="0.0001" value="0.003"></label>
+          <label class="field"><span>Pen speed <output data-for="speed"></output></span><input type="range" data-k="speed" min="5" max="200" value="30"></label>
+          <div class="buttons">
+            <button data-act="random">Random</button>
+            <button data-act="replay">Replay</button>
+          </div>
+        </aside>
+      </div>
+      <details class="explain">
+        <summary>How it works</summary>
+        <p>A harmonograph is a Victorian drawing machine. Every pendulum is a sine wave that slowly dies out. Add a few up and you get these.</p>
+        <p>When the frequencies are almost whole-number ratios, like 2 : 3.006, the tiny mistake makes the figure turn slowly as it shrinks. Hit random until you get a good one.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Made by Rutger Klamer. <a href="https://github.com/rutgerklamer/cool_math">Open source</a>, MIT licence. <a href="#top">Go home</a></p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
 </html>
