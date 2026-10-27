@@ -1,8 +1,6 @@
 # Cool Math
 Fifteen math visualisations you can fool around with, one at a time.
 
-Made in 2021; since 2026 there are seven more and they share one page. The eight 2021 pages are still here, kept as they were.
-
 Live: https://rutgerklamer.github.io/cool_math/
 
 Most of these started as a Numberphile video. Go watch them, they explain it better than we do.
@@ -31,12 +29,12 @@ Most of these started as a Numberphile video. Go watch them, they explain it bet
 
 | File | What it is |
 | ---- | ---------- |
-| [index.html](index.html) | The site. Without a hash it shows the 2021 home page; `#fibonacci`, `#ant` and so on open one visualisation. |
+| [index.html](index.html) | The site. Without a hash it shows the home page; `#fibonacci`, `#ant` and so on open one visualisation. |
 | [assets/core.js](assets/core.js) | What every visualisation shares: canvas setup, sliders and buttons, dragging, sound, the main loop and the router. |
 | [assets/demos](assets/demos) | One file per visualisation, `01-fibonacci.js` to `15-harmonograph.js`. |
-| [assets/app.css](assets/app.css) | The paper, the Times and the clumsy buttons, for the new page. |
-| [fibonacci_modulus](fibonacci_modulus), [golden_ratio](golden_ratio), [beautiful_trigonometry](beautiful_trigonometry), [cellular_automata](cellular_automata), [pendulum](pendulum), [toothpicks](toothpicks), [chaos_game](chaos_game), [magic_highway](magic_highway) | The 2021 pages, kept as they were. They load p5.js 1.2.0 from a CDN. Each new visualisation links to its own. |
-| [style.css](style.css), [background.jpg](background.jpg) | The 2021 stylesheet and the paper. The new page uses the same paper. |
+| [assets/app.css](assets/app.css) | The paper, the Times and the clumsy buttons. |
+| [fibonacci_modulus](fibonacci_modulus), [golden_ratio](golden_ratio), [beautiful_trigonometry](beautiful_trigonometry), [cellular_automata](cellular_automata), [pendulum](pendulum), [toothpicks](toothpicks), [chaos_game](chaos_game), [magic_highway](magic_highway) | The old p5.js versions of the first eight. They still work. |
+| [style.css](style.css), [background.jpg](background.jpg) | The stylesheet of the old versions, and the paper everything is drawn on. |
 
 ## Hosting
 It's a static site, so GitHub Pages serves it straight from the root of `main` (Settings → Pages → Deploy from a branch). `.nojekyll` tells Pages to serve the files as they are.

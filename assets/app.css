@@ -40,9 +40,6 @@ a:hover { color: var(--textHoverColor); }
 .toc { padding: 24px 0 40px; }
 .toc-inner { display: flex; flex-direction: column; align-items: center; }
 .toc a { font-size: 32px; line-height: 48px; }
-.toc-new { margin-top: 36px; }
-.toc-new h2 { font-size: 24px; margin: 0 0 4px; }
-.toc-new a { font-size: 24px; line-height: 36px; }
 
 /* One visualisation at a time: the router puts .open on the section in the URL hash */
 .demo { display: none; }
@@ -150,8 +147,6 @@ button:active {
 .hint { margin: 0; font-size: 16px; font-style: italic; }
 .home { font-size: 24px; margin-top: 8px; }
 
-.was { margin: 20px 0 0; font-size: 20px; font-style: italic; }
-.was a { text-decoration: underline; }
 .pager {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
   margin-top: 40px; padding-top: 16px;
@@ -168,7 +163,7 @@ button:active {
 .explain summary:hover { color: var(--textHoverColor); }
 .explain p { margin: 10px 0 0; }
 
-/* The first eight keep their 2021 text, always visible, like the old pages */
+/* Plain info text under the canvas, always visible */
 .info { margin-top: 44px; max-width: 760px; font-size: 20px; line-height: 1.4; }
 .info p { margin: 0; }
 .info a { text-decoration: underline; }
