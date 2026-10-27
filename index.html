@@ -4,36 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cool Math</title>
-  <meta name="description" content="Eight interactive mathematical visualisations on a single page.">
+  <meta name="description" content="Fifteen math visualisations you can fool around with.">
   <link rel="stylesheet" href="assets/app.css">
 </head>
-<body id="top">
-  <header class="hero">
-    <div class="wrap">
-      <h1>Cool math visualisations you can fool around with.</h1>
-      <p class="tagline">Don't mind the code, it's a mess and I don't care. BTW we're <a href="https://github.com/rutgerklamer/cool_math">open source.</a> (Customisations are on the side, information is at the bottom.)</p>
-    </div>
-  </header>
+<body>
+  <!-- Home: the 2021 landing page, word for word, with the 2026 additions under it -->
+  <div id="home">
+    <header class="hero">
+      <div class="wrap">
+        <h1>Cool math visualisations you can fool around with. Don't mind the code, it's a mess and I don't care. BTW we're <a href="https://github.com/rutgerklamer/cool_math"> open source. </a> (Information is at the bottom, customisations are on the side(s)) </h1>
+      </div>
+    </header>
 
-  <nav class="toc" aria-label="Visualisations">
-    <div class="wrap toc-inner">
-      <a href="#fibonacci">Fibonacci Modulus</a>
-      <a href="#golden">Golden Ratio</a>
-      <a href="#trig">Beautiful Trigonometry</a>
-      <a href="#life">Cellular Automata</a>
-      <a href="#pendulum">Pendulum</a>
-      <a href="#toothpicks">Toothpicks</a>
-      <a href="#chaos">Chaos game</a>
-      <a href="#euler">Magic highway</a>
-      <a href="#times">Times tables</a>
-      <a href="#recaman">Recamán sequence</a>
-      <a href="#ant">Langton's ant</a>
-      <a href="#julia">Mandelbrot &amp; Julia</a>
-      <a href="#ulam">Ulam spiral</a>
-      <a href="#buffon">Buffon's needle</a>
-      <a href="#harmonograph">Harmonograph</a>
-    </div>
-  </nav>
+    <nav class="toc" aria-label="Visualisations">
+      <div class="wrap toc-inner">
+        <a href="#fibonacci">Fibonacci Modulus</a>
+        <a href="#golden">Golden Ratio</a>
+        <a href="#trig">Beautiful Trigonometry</a>
+        <a href="#life">Cellular Automata</a>
+        <a href="#pendulum">Pendulum</a>
+        <a href="#toothpicks">Toothpicks</a>
+        <a href="#chaos">Chaos game</a>
+        <a href="#euler">Magic highway</a>
+      </div>
+      <div class="wrap toc-inner toc-new">
+        <h2>Seven more, since 2026</h2>
+        <a href="#times">Times tables</a>
+        <a href="#recaman">Recamán sequence</a>
+        <a href="#ant">Langton's ant</a>
+        <a href="#julia">Mandelbrot &amp; Julia</a>
+        <a href="#ulam">Ulam spiral</a>
+        <a href="#buffon">Buffon's needle</a>
+        <a href="#harmonograph">Harmonograph</a>
+      </div>
+    </nav>
+  </div>
 
   <main class="wrap">
 
@@ -82,6 +87,7 @@
       <div class="info">
         <p>When we are going through every number of a fibonacci sequence and use a modulus(X) on that number, we always get a repeating sequence of remainders. We can plot those remainders on a circle where we have X-1 points. We draw lines between the current remainder and the previous remainder. This gets us some interesting results where some outcomes are perfectly symmetrical. For example fib mod X gives back the sequence 01120221. With X = 3 we have 3 points in the circle to draw lines to. from 0->1->1->2->2->1. Some cool examples:</p>
       </div>
+      <p class="was"><a href="fibonacci_modulus/">The 2021 version, kept as it was</a></p>
     </section>
 
     <!-- 02 Golden ratio -->
@@ -113,6 +119,7 @@
         <p>The golden ration has lots of usecases. See <a href="https://en.wikipedia.org/wiki/Golden_ratio"> Wikipedia </a> In this use case We spiral around the center with the golden ration as the angle change. This diagram closely resembles the seeds in a sunflowers top.</p>
         <img class="info-img" src="golden_ratio/sunflower.jpg" alt="The seeds in the top of a sunflower">
       </div>
+      <p class="was"><a href="golden_ratio/">The 2021 version, kept as it was</a></p>
     </section>
 
     <!-- 03 Trigonometry -->
@@ -135,6 +142,7 @@
       <div class="info">
         <p>These balls are each moving up and down a single line. Without the lines, it gives the neat illusion that the balls are moving in a circle</p>
       </div>
+      <p class="was"><a href="beautiful_trigonometry/">The 2021 version, kept as it was</a></p>
     </section>
 
     <!-- 04 Cellular automata -->
@@ -172,6 +180,7 @@
       <div class="info">
         <p>Cellular automata is a beautifull example of simplified evolution. A set of rules defines if a creature (block) will live or die.</p>
       </div>
+      <p class="was"><a href="cellular_automata/">The 2021 version, kept as it was</a></p>
     </section>
 
     <!-- 05 Pendulum -->
@@ -202,6 +211,7 @@
       <div class="info">
         <p>Pretty self explenitory double pendulum.</p>
       </div>
+      <p class="was"><a href="pendulum/">The 2021 version, kept as it was</a></p>
     </section>
 
     <!-- 06 Toothpicks -->
@@ -230,6 +240,7 @@
         <summary>How it works</summary>
         <p>Start with one toothpick. In each generation, every end that touches no other toothpick gets a new toothpick centred on it, at right angles. The running total — 1, 3, 7, 11, 15, 23, 35, 43, … — is <a href="https://oeis.org/A139250" target="_blank" rel="noopener">OEIS A139250</a>. Watch the counter: every time the generation hits a power of two, the pattern is a perfect square-ish "completed" shape.</p>
       </details>
+      <p class="was"><a href="toothpicks/">The 2021 version, kept as it was</a></p>
     </section>
 
     <!-- 07 Chaos game -->
@@ -278,6 +289,7 @@
       <div class="info">
         <p>We spawn a set of big points and a dot randomly placed on the screen. Every time we randomly choos a point to move towards. The distance moved is the distance from the current point to said point divided by a set amount. We leave a trail for some interesting fractals.</p>
       </div>
+      <p class="was"><a href="chaos_game/">The 2021 version, kept as it was</a></p>
     </section>
 
     <!-- 08 Magic highway -->
@@ -308,6 +320,7 @@
       <div class="info">
         <p>We get an interesting 'magic highway' when we show the medicenter, circumcenter and orthocenter.</p>
       </div>
+      <p class="was"><a href="magic_highway/">The 2021 version, kept as it was</a></p>
     </section>
 
     <!-- 09 Times tables -->
@@ -534,9 +547,24 @@
   </main>
 
   <footer class="wrap foot">
-    <p>Made by Rutger Klamer. <a href="https://github.com/rutgerklamer/cool_math">Open source</a>, MIT licence. <a href="#top">Go home</a></p>
+    <p>Made by Rutger Klamer. <a href="https://github.com/rutgerklamer/cool_math">Open source</a>, MIT licence. <a href="#">Go home</a></p>
   </footer>
 
-  <script src="assets/app.js"></script>
+  <script src="assets/core.js"></script>
+  <script src="assets/demos/01-fibonacci.js"></script>
+  <script src="assets/demos/02-golden.js"></script>
+  <script src="assets/demos/03-trig.js"></script>
+  <script src="assets/demos/04-life.js"></script>
+  <script src="assets/demos/05-pendulum.js"></script>
+  <script src="assets/demos/06-toothpicks.js"></script>
+  <script src="assets/demos/07-chaos.js"></script>
+  <script src="assets/demos/08-euler.js"></script>
+  <script src="assets/demos/09-times.js"></script>
+  <script src="assets/demos/10-recaman.js"></script>
+  <script src="assets/demos/11-ant.js"></script>
+  <script src="assets/demos/12-julia.js"></script>
+  <script src="assets/demos/13-ulam.js"></script>
+  <script src="assets/demos/14-buffon.js"></script>
+  <script src="assets/demos/15-harmonograph.js"></script>
 </body>
 </html>

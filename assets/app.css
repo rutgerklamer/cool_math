@@ -36,14 +36,17 @@ a:hover { color: var(--textHoverColor); }
 /* Landing: same words, same big link list as the old index page */
 .hero { text-align: center; padding: 40px 0 10px; }
 .hero h1 { font-size: 32px; margin: 0 auto 8px; max-width: 760px; }
-.tagline { font-size: 20px; font-weight: bold; max-width: 760px; margin: 0 auto; }
-.tagline a { text-decoration: underline; }
 
 .toc { padding: 24px 0 40px; }
 .toc-inner { display: flex; flex-direction: column; align-items: center; }
 .toc a { font-size: 32px; line-height: 48px; }
-.toc a b { display: none; }
-.toc a.active { color: var(--textHoverColor); }
+.toc-new { margin-top: 36px; }
+.toc-new h2 { font-size: 24px; margin: 0 0 4px; }
+.toc-new a { font-size: 24px; line-height: 36px; }
+
+/* One visualisation at a time: the router puts .open on the section in the URL hash */
+.demo { display: none; }
+.demo.open { display: block; }
 
 /* Each visualisation: options on the left, the canvas next to it, info underneath */
 .demo { padding: 40px 0 20px; border-top: 4px solid var(--textColor); }
@@ -146,6 +149,15 @@ button:active {
 
 .hint { margin: 0; font-size: 16px; font-style: italic; }
 .home { font-size: 24px; margin-top: 8px; }
+
+.was { margin: 20px 0 0; font-size: 20px; font-style: italic; }
+.was a { text-decoration: underline; }
+.pager {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+  margin-top: 40px; padding-top: 16px;
+  border-top: 4px solid var(--textColor);
+  font-size: 24px;
+}
 
 .legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .legend i { width: 14px; height: 14px; border-radius: 50%; border: 2px solid black; background: var(--c); flex: none; }
