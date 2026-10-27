@@ -43,7 +43,6 @@
         <span class="num">01</span>
         <div>
           <h2>Fibonacci modulus</h2>
-          <p class="lede">Take a Fibonacci-like sequence modulo <var>n</var> and connect consecutive remainders on a circle of <var>n</var> points.</p>
         </div>
       </header>
       <div class="demo-body">
@@ -80,11 +79,9 @@
           </div>
         </aside>
       </div>
-      <details class="explain">
-        <summary>How it works</summary>
-        <p>The sequence follows <code>F(k+1) = F(k) + m·F(k−1)</code>. Because there are only <var>n</var>² possible pairs of remainders, the sequence mod <var>n</var> must eventually repeat — for the ordinary Fibonacci numbers this cycle length is called the <em>Pisano period</em>. For <var>n</var> = 3 the remainders are 0 1 1 2 0 2 2 1, and then it starts over.</p>
-        <p>Each remainder is a point on the circle; each step draws a chord from the previous remainder to the next. When the starting pair comes back, the circle lights up and the period is shown.</p>
-      </details>
+      <div class="info">
+        <p>When we are going through every number of a fibonacci sequence and use a modulus(X) on that number, we always get a repeating sequence of remainders. We can plot those remainders on a circle where we have X-1 points. We draw lines between the current remainder and the previous remainder. This gets us some interesting results where some outcomes are perfectly symmetrical. For example fib mod X gives back the sequence 01120221. With X = 3 we have 3 points in the circle to draw lines to. from 0->1->1->2->2->1. Some cool examples:</p>
+      </div>
     </section>
 
     <!-- 02 Golden ratio -->
@@ -93,7 +90,6 @@
         <span class="num">02</span>
         <div>
           <h2>Golden ratio</h2>
-          <p class="lede">Place each seed a fixed angle further around than the last. At the golden angle, you get a sunflower.</p>
         </div>
       </header>
       <div class="demo-body">
@@ -113,10 +109,10 @@
           <label class="check"><input type="checkbox" data-k="animate"> Animate the angle</label>
         </aside>
       </div>
-      <details class="explain">
-        <summary>How it works</summary>
-        <p>Seed <var>i</var> sits at angle <code>i·θ</code> and radius <code>c·√i</code> (Vogel's model), so every seed gets equal area. If θ is a rational fraction of a turn like 1/7, seeds line up in 7 straight spokes and waste space. The golden ratio φ is the "most irrational" number — its continued fraction is all ones — so the golden angle (≈ 137.5°) never lines up, and the seeds pack perfectly. Turn on the animation and watch spirals appear whenever θ passes close to a simple fraction.</p>
-      </details>
+      <div class="info">
+        <p>The golden ration has lots of usecases. See <a href="https://en.wikipedia.org/wiki/Golden_ratio"> Wikipedia </a> In this use case We spiral around the center with the golden ration as the angle change. This diagram closely resembles the seeds in a sunflowers top.</p>
+        <img class="info-img" src="golden_ratio/sunflower.jpg" alt="The seeds in the top of a sunflower">
+      </div>
     </section>
 
     <!-- 03 Trigonometry -->
@@ -125,7 +121,6 @@
         <span class="num">03</span>
         <div>
           <h2>Beautiful trigonometry</h2>
-          <p class="lede">Every ball moves only back and forth along a straight line. Together, they roll in a circle.</p>
         </div>
       </header>
       <div class="demo-body">
@@ -137,10 +132,9 @@
           <label class="check"><input type="checkbox" data-k="inner"> Reveal the hidden circle</label>
         </aside>
       </div>
-      <details class="explain">
-        <summary>How it works</summary>
-        <p>Ball <var>k</var> lives on a diameter at angle <code>θₖ = kπ/N</code> and sits at distance <code>R·cos(t − θₖ)</code> from the centre: pure simple harmonic motion. Yet all N balls always lie on a circle of radius R/2 that rolls around inside the big one. This is the <em>Tusi couple</em>, described by Nasir al-Din al-Tusi in 1247.</p>
-      </details>
+      <div class="info">
+        <p>These balls are each moving up and down a single line. Without the lines, it gives the neat illusion that the balls are moving in a circle</p>
+      </div>
     </section>
 
     <!-- 04 Cellular automata -->
@@ -149,7 +143,6 @@
         <span class="num">04</span>
         <div>
           <h2>Cellular automata</h2>
-          <p class="lede">Each cell lives or dies based only on its eight neighbours. Draw on the grid to plant life.</p>
         </div>
       </header>
       <div class="demo-body">
@@ -176,10 +169,9 @@
           <p class="hint">Click and drag on the grid to draw. Starting on a live cell erases instead.</p>
         </aside>
       </div>
-      <details class="explain">
-        <summary>How it works</summary>
-        <p>Rules are written as <code>B/S</code>: a dead cell is <strong>B</strong>orn with the listed neighbour counts, a live cell <strong>S</strong>urvives with them. Conway's B3/S23 is famous for gliders and guns; HighLife adds a self-replicator; Day &amp; Night is symmetric between life and death. Brian's Brain has three states — a firing cell always becomes "dying", then dead — which makes everything move.</p>
-      </details>
+      <div class="info">
+        <p>Cellular automata is a beautifull example of simplified evolution. A set of rules defines if a creature (block) will live or die.</p>
+      </div>
     </section>
 
     <!-- 05 Pendulum -->
@@ -188,7 +180,6 @@
         <span class="num">05</span>
         <div>
           <h2>Double pendulum</h2>
-          <p class="lede">Two rods, two weights, one of the simplest chaotic systems. Grab a weight to throw it.</p>
         </div>
       </header>
       <div class="demo-body">
@@ -208,10 +199,9 @@
           </div>
         </aside>
       </div>
-      <details class="explain">
-        <summary>How it works</summary>
-        <p>The motion follows the Lagrangian equations of a double pendulum, integrated with fourth-order Runge–Kutta. With "chaos twins" on, five pendulums start almost identically — a thousandth of a degree apart. For a few seconds they move as one; then they diverge completely. That sensitivity to initial conditions is what "chaos" means.</p>
-      </details>
+      <div class="info">
+        <p>Pretty self explenitory double pendulum.</p>
+      </div>
     </section>
 
     <!-- 06 Toothpicks -->
@@ -248,7 +238,6 @@
         <span class="num">07</span>
         <div>
           <h2>Chaos game</h2>
-          <p class="lede">Pick a random corner, jump part of the way towards it, drop a dot. Order emerges from pure randomness.</p>
         </div>
       </header>
       <div class="demo-body">
@@ -286,10 +275,9 @@
           <p class="hint">Drag the vertices to reshape the fractal.</p>
         </aside>
       </div>
-      <details class="explain">
-        <summary>How it works</summary>
-        <p>With three corners and a jump of ½, every dot lands on the Sierpiński triangle — no matter where you start. Change the number of corners, the jump fraction, or forbid certain choices (like picking the same corner twice), and entirely different fractals appear. The colours show which corner each dot jumped towards.</p>
-      </details>
+      <div class="info">
+        <p>We spawn a set of big points and a dot randomly placed on the screen. Every time we randomly choos a point to move towards. The distance moved is the distance from the current point to said point divided by a set amount. We leave a trail for some interesting fractals.</p>
+      </div>
     </section>
 
     <!-- 08 Magic highway -->
@@ -298,7 +286,6 @@
         <span class="num">08</span>
         <div>
           <h2>The magic highway</h2>
-          <p class="lede">Three different "centres" of any triangle always lie on one straight line. Drag the corners and try to break it.</p>
         </div>
       </header>
       <div class="demo-body">
@@ -318,10 +305,9 @@
           </div>
         </aside>
       </div>
-      <details class="explain">
-        <summary>How it works</summary>
-        <p>The centroid (where the medians meet), the circumcentre (centre of the circle through all three corners) and the orthocentre (where the altitudes meet) are always collinear — this is the <em>Euler line</em>. Even better, G always sits exactly a third of the way from O to H, so |GH| = 2·|OG|. The centre of the nine-point circle lies on it too, halfway between O and H. The incentre usually does <em>not</em> — it only joins the line when the triangle is isosceles.</p>
-      </details>
+      <div class="info">
+        <p>We get an interesting 'magic highway' when we show the medicenter, circumcenter and orthocenter.</p>
+      </div>
     </section>
 
     <!-- 09 Times tables -->
