@@ -3,23 +3,27 @@ Fifteen math visualisations you can fool around with, all on one page.
 
 Live: https://rutgerklamer.github.io/cool_math/
 
-| # | Visualisation | What you can do | Explanation |
-|---|---------------|-----------------|-------------|
-| 01 | Fibonacci modulus | Presets, any modulus/multiplier/start, exact cycle detection, sound | [YouTube](https://www.youtube.com/watch?v=o1eLKODSCqw) |
-| 02 | Golden ratio | Sunflower phyllotaxis, irrational-angle presets, animated drift | [YouTube](https://www.youtube.com/watch?v=sj8Sg8qnjOg) |
-| 03 | Beautiful trigonometry | Tusi couple: balls on straight lines that roll in a circle | [YouTube](https://www.youtube.com/watch?v=snHKEpCv0Hk) |
-| 04 | Cellular automata | Life, HighLife, Day & Night, Seeds, Brian's Brain; draw on the grid | [YouTube](https://www.youtube.com/watch?v=R9Plq-D1gEk) |
-| 05 | Double pendulum | RK4 physics, drag the weights, "chaos twins" | [YouTube](https://www.youtube.com/watch?v=uWzPe_S-RVE) |
-| 06 | Toothpicks | OEIS A139250 growth with live counter | [YouTube](https://www.youtube.com/watch?v=_UtCli1SgjI&t=90s) |
-| 07 | Chaos game | Draggable vertices, fractal presets, restricted vertex rules | [YouTube](https://www.youtube.com/watch?v=kbKtFN71Lfs) |
-| 08 | Magic highway | Euler line, nine-point circle and incircle of any triangle | [YouTube](https://www.youtube.com/watch?v=wVH4MS6v23U) |
-| 09 | Times tables | Point n to point n × k on a circle; cardioids, nephroids, auto count | |
-| 10 | Recamán sequence | Back if you can, forward if you can't, as half circles; with sound | |
-| 11 | Langton's ant | Classic RL ant and multi-colour turmites | |
-| 12 | Mandelbrot & Julia | Drag c around the Mandelbrot set, see its Julia set live | |
-| 13 | Ulam spiral | Primes on a square spiral; start at 41 for Euler's diagonal | |
-| 14 | Buffon's needle | Estimate π by throwing needles on lined paper | |
-| 15 | Harmonograph | Damped pendulums drawing with a pen | |
+Most of these started as a Numberphile video. Go watch them, they explain it better than we do.
+
+| # | Visualisation | Numberphile | Also worth a watch |
+|---|---------------|-------------|--------------------|
+| 01 | [Fibonacci modulus](https://rutgerklamer.github.io/cool_math/#fibonacci) | [Fibonacci Mystery](https://www.youtube.com/watch?v=Nu-lW-Ifyec) | [A New Way to Look at Fibonacci Numbers](https://www.youtube.com/watch?v=o1eLKODSCqw) (Jacob Yatsko) |
+| 02 | [Golden ratio](https://rutgerklamer.github.io/cool_math/#golden) | [The Golden Ratio (why it is so irrational)](https://www.youtube.com/watch?v=sj8Sg8qnjOg) | |
+| 03 | [Beautiful trigonometry](https://rutgerklamer.github.io/cool_math/#trig) | [Beautiful Trigonometry](https://www.youtube.com/watch?v=snHKEpCv0Hk) | |
+| 04 | [Cellular automata](https://rutgerklamer.github.io/cool_math/#life) | [Inventing Game of Life (John Conway)](https://www.youtube.com/watch?v=R9Plq-D1gEk) | |
+| 05 | [Double pendulum](https://rutgerklamer.github.io/cool_math/#pendulum) | none | [Coding Challenge 93: Double Pendulum](https://www.youtube.com/watch?v=uWzPe_S-RVE) (The Coding Train), [Double Pendulums are Chaoticn't](https://www.youtube.com/watch?v=dtjb2OhEQcU) (2swap) |
+| 06 | [Toothpicks](https://rutgerklamer.github.io/cool_math/#toothpicks) | [Terrific Toothpick Patterns](https://www.youtube.com/watch?v=_UtCli1SgjI&t=90s) | |
+| 07 | [Chaos game](https://rutgerklamer.github.io/cool_math/#chaos) | [Chaos Game](https://www.youtube.com/watch?v=kbKtFN71Lfs) | |
+| 08 | [Magic highway](https://rutgerklamer.github.io/cool_math/#euler) | [Triangles have a Magic Highway](https://www.youtube.com/watch?v=wVH4MS6v23U) | |
+| 09 | [Times tables](https://rutgerklamer.github.io/cool_math/#times) | none | [Times Tables, Mandelbrot and the Heart of Mathematics](https://www.youtube.com/watch?v=qhbuKbxJsk8) (Mathologer) |
+| 10 | [Recamán sequence](https://rutgerklamer.github.io/cool_math/#recaman) | [The Slightly Spooky Recamán Sequence](https://www.youtube.com/watch?v=FGC5TdIiT9U) | |
+| 11 | [Langton's ant](https://rutgerklamer.github.io/cool_math/#ant) | [Langton's Ant](https://www.youtube.com/watch?v=NWBToaXK5T0) | |
+| 12 | [Mandelbrot & Julia](https://rutgerklamer.github.io/cool_math/#julia) | [The Mandelbrot Set](https://www.youtube.com/watch?v=NGMRB4O922I), [What's so special about the Mandelbrot Set?](https://www.youtube.com/watch?v=FFftmWSzgmk) | |
+| 13 | [Ulam spiral](https://rutgerklamer.github.io/cool_math/#ulam) | [Prime Spirals](https://www.youtube.com/watch?v=iFuR97YcSLM) | |
+| 14 | [Buffon's needle](https://rutgerklamer.github.io/cool_math/#buffon) | [Pi and Buffon's Matches](https://www.youtube.com/watch?v=sJVivjuMfWA) | |
+| 15 | [Harmonograph](https://rutgerklamer.github.io/cool_math/#harmonograph) | none | [Three Pendulum Rotary Harmonograph](https://www.youtube.com/watch?v=H4YQonwQUDs) (Karl Sims) |
+
+"none" means Numberphile hasn't made one, as far as we could find.
 
 ## Hosting
 It's a static site, so GitHub Pages serves it straight from the root of `main` (Settings → Pages → Deploy from a branch). `.nojekyll` tells Pages to serve the files as they are.
