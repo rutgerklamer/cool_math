@@ -1,29 +1,23 @@
 # Cool Math
-Fifteen math visualisations you can fool around with, one at a time.
+The goal of this project is to visualise some cool mathematical phenomenon. Although this project is cool as fuck do not mind the (sometimes) bad code and spelling mistakes.
 
-Live: https://rutgerklamer.github.io/cool_math/
-
-Most of these started as a Numberphile video. Go watch them, they explain it better than we do.
-
-| # | Visualisation | Numberphile | Also worth a watch |
-|---|---------------|-------------|--------------------|
-| 01 | [Fibonacci modulus](https://rutgerklamer.github.io/cool_math/#fibonacci) | [Fibonacci Mystery](https://www.youtube.com/watch?v=Nu-lW-Ifyec) | [A New Way to Look at Fibonacci Numbers](https://www.youtube.com/watch?v=o1eLKODSCqw) (Jacob Yatsko) |
-| 02 | [Golden ratio](https://rutgerklamer.github.io/cool_math/#golden) | [The Golden Ratio (why it is so irrational)](https://www.youtube.com/watch?v=sj8Sg8qnjOg) | |
-| 03 | [Beautiful trigonometry](https://rutgerklamer.github.io/cool_math/#trig) | [Beautiful Trigonometry](https://www.youtube.com/watch?v=snHKEpCv0Hk) | |
-| 04 | [Cellular automata](https://rutgerklamer.github.io/cool_math/#life) | [Inventing Game of Life (John Conway)](https://www.youtube.com/watch?v=R9Plq-D1gEk) | |
-| 05 | [Double pendulum](https://rutgerklamer.github.io/cool_math/#pendulum) | none | [Coding Challenge 93: Double Pendulum](https://www.youtube.com/watch?v=uWzPe_S-RVE) (The Coding Train), [Double Pendulums are Chaoticn't](https://www.youtube.com/watch?v=dtjb2OhEQcU) (2swap) |
-| 06 | [Toothpicks](https://rutgerklamer.github.io/cool_math/#toothpicks) | [Terrific Toothpick Patterns](https://www.youtube.com/watch?v=_UtCli1SgjI&t=90s) | |
-| 07 | [Chaos game](https://rutgerklamer.github.io/cool_math/#chaos) | [Chaos Game](https://www.youtube.com/watch?v=kbKtFN71Lfs) | |
-| 08 | [Magic highway](https://rutgerklamer.github.io/cool_math/#euler) | [Triangles have a Magic Highway](https://www.youtube.com/watch?v=wVH4MS6v23U) | |
-| 09 | [Times tables](https://rutgerklamer.github.io/cool_math/#times) | none | [Times Tables, Mandelbrot and the Heart of Mathematics](https://www.youtube.com/watch?v=qhbuKbxJsk8) (Mathologer) |
-| 10 | [Recamán sequence](https://rutgerklamer.github.io/cool_math/#recaman) | [The Slightly Spooky Recamán Sequence](https://www.youtube.com/watch?v=FGC5TdIiT9U) | |
-| 11 | [Langton's ant](https://rutgerklamer.github.io/cool_math/#ant) | [Langton's Ant](https://www.youtube.com/watch?v=NWBToaXK5T0) | |
-| 12 | [Mandelbrot & Julia](https://rutgerklamer.github.io/cool_math/#julia) | [The Mandelbrot Set](https://www.youtube.com/watch?v=NGMRB4O922I), [What's so special about the Mandelbrot Set?](https://www.youtube.com/watch?v=FFftmWSzgmk) | |
-| 13 | [Ulam spiral](https://rutgerklamer.github.io/cool_math/#ulam) | [Prime Spirals](https://www.youtube.com/watch?v=iFuR97YcSLM) | |
-| 14 | [Buffon's needle](https://rutgerklamer.github.io/cool_math/#buffon) | [Pi and Buffon's Matches](https://www.youtube.com/watch?v=sJVivjuMfWA) | |
-| 15 | [Harmonograph](https://rutgerklamer.github.io/cool_math/#harmonograph) | none | [Three Pendulum Rotary Harmonograph](https://www.youtube.com/watch?v=H4YQonwQUDs) (Karl Sims) |
-
-"none" means Numberphile hasn't made one, as far as we could find.
+| Projects      | demo           | Explenation  |
+| ------------- |:-------------:| -----:|
+| Fibonacci modulus     | [Demo](https://rutgerklamer.github.io/cool_math/#fibonacci) |[Youtube](https://www.youtube.com/watch?v=o1eLKODSCqw) |
+| Golden ratio     | [Demo](https://rutgerklamer.github.io/cool_math/#golden) |[Youtube](https://www.youtube.com/watch?v=sj8Sg8qnjOg) |
+| Beautiful trigonometry     | [Demo](https://rutgerklamer.github.io/cool_math/#trig) |[Youtube](https://www.youtube.com/watch?v=snHKEpCv0Hk) |
+| Cellular automata     | [Demo](https://rutgerklamer.github.io/cool_math/#life) |[Youtube](https://www.youtube.com/watch?v=R9Plq-D1gEk) |
+| Pendulum     | [Demo](https://rutgerklamer.github.io/cool_math/#pendulum) |[Youtube](https://www.youtube.com/watch?v=uWzPe_S-RVE) |
+| Toothpicks     | [Demo](https://rutgerklamer.github.io/cool_math/#toothpicks) |[Youtube](https://www.youtube.com/watch?v=_UtCli1SgjI&t=90s) |
+| Chaos game      | [Demo](https://rutgerklamer.github.io/cool_math/#chaos) |[Youtube](https://www.youtube.com/watch?v=kbKtFN71Lfs) |
+| Magic highway      | [Demo](https://rutgerklamer.github.io/cool_math/#euler) |[Youtube](https://www.youtube.com/watch?v=wVH4MS6v23U) |
+| Times tables     | [Demo](https://rutgerklamer.github.io/cool_math/#times) |[Youtube](https://www.youtube.com/watch?v=qhbuKbxJsk8) |
+| Recamán sequence     | [Demo](https://rutgerklamer.github.io/cool_math/#recaman) |[Youtube](https://www.youtube.com/watch?v=FGC5TdIiT9U) |
+| Langton's ant     | [Demo](https://rutgerklamer.github.io/cool_math/#ant) |[Youtube](https://www.youtube.com/watch?v=NWBToaXK5T0) |
+| Mandelbrot & Julia     | [Demo](https://rutgerklamer.github.io/cool_math/#julia) |[Youtube](https://www.youtube.com/watch?v=NGMRB4O922I) |
+| Ulam spiral     | [Demo](https://rutgerklamer.github.io/cool_math/#ulam) |[Youtube](https://www.youtube.com/watch?v=iFuR97YcSLM) |
+| Buffon's needle     | [Demo](https://rutgerklamer.github.io/cool_math/#buffon) |[Youtube](https://www.youtube.com/watch?v=sJVivjuMfWA) |
+| Harmonograph     | [Demo](https://rutgerklamer.github.io/cool_math/#harmonograph) |[Youtube](https://www.youtube.com/watch?v=H4YQonwQUDs) |
 
 ## The repo
 
